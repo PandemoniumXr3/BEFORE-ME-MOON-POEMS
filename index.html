@@ -17,7 +17,7 @@
   <meta property="og:type" content="book">
   <meta property="og:site_name" content="BEFORE ME, MOON">
   <meta property="og:title" content="BEFORE ME, MOON — Mike Ramírez">
-  <meta property="og:description" content="Before I could name the world, I named the moon. A first poetry collection. Join the waitlist.">
+  <meta property="og:description" content="Before I could name the world, I named the moon. 75 poems. Out now as an ebook.">
   <meta property="og:url" content="https://YOUR-DOMAIN.com/">
   <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg"><!-- placeholder: social preview image -->
   <meta property="og:image:alt" content="BEFORE ME, MOON — poetry by Mike Ramírez">
@@ -35,9 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Caslon+Display&family=Reenie+Beanie&display=swap">
-  <!-- ═══════════════════════════════════════════════════════════
-       ALL STYLES (was style.css) — everything is in this one file now
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- ALL STYLES (was style.css) -->
   <style>
 /* ═══════════════════════════════════════════════════════════════
    BEFORE ME, MOON
@@ -848,13 +846,20 @@ em { font-style: italic; }
 .spec dt { font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-mute); padding-top: 3px; }
 .spec__tbd { font-style: italic; color: var(--ink-mute); }
 
-/* Buy the ebook (Payhip) — button + small line under the book specs */
-.buy {
-  display: grid;
-  justify-items: start;
-  gap: var(--s-3);
-  margin-top: var(--s-5);
+/* ── The book: sales copy + buy (Payhip) ─────────────────────── */
+.sale__open {
+  max-width: 30rem;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  color: var(--ink-soft);
 }
+.sale__body { display: grid; gap: var(--s-4); max-width: 30rem; margin-top: var(--s-2); color: var(--ink-soft); }
+.sale__last { font-style: italic; color: var(--ink); }
+.buy { display: grid; justify-items: start; gap: var(--s-3); margin-top: var(--s-5); }
+.buy__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); margin-bottom: var(--s-2); }
+.buy__wl { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 @media (min-width: 900px) {
   .book__grid { grid-template-columns: 1fr 1fr; }
   .book__stage { order: 2; }
@@ -998,6 +1003,166 @@ em { font-style: italic; }
   .js .reveal { opacity: 1; transform: none; }
   .moon-drawing { transform: none !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   OPEN THE BOOK — interactive preview with page turns
+   Desktop: two-page spread. Phone: one page at a time.
+   Without JS: the free poems are shown as plain text (.fb-library).
+   ═══════════════════════════════════════════════════════════════ */
+.openbook__head { display: grid; gap: var(--s-4); }
+.openbook__head .h2 { margin-top: var(--s-2); }
+.openbook__head .lede { font-style: italic; }
+
+.fb { width: 100%; max-width: 940px; margin: var(--s-8) auto 0; perspective: 2400px; }
+.no-js .fb, .no-js .fb-controls { display: none; }
+
+/* free poems as plain text (no JS) — hidden once the book is built */
+.fb-library { display: grid; gap: var(--s-8); max-width: 36rem; margin: var(--s-8) auto 0; }
+.fb-library h3 { font-family: var(--f-display); font-size: var(--t-h2); line-height: 1; }
+.fb-library pre { margin: var(--s-5) 0 0; font-family: var(--f-serif); font-size: var(--t-body); line-height: 1.65; white-space: pre-wrap; }
+.js .fb-library { display: none; }
+
+/* ── one page ──────────────────────────────────────────────────── */
+.fb-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 11% 10% 8%;          /* % of the page width (cqw can't size a container's own padding) */
+  background: var(--paper-light);
+  color: var(--ink);
+  container-type: inline-size;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 1px 0 rgb(0 0 0 / .04), 0 24px 44px -26px rgb(40 30 15 / .45);
+}
+.fb-face--cover { padding: 0; background: #E9E4D9; }
+.fb-face--back { background: #E9E4D9; }
+.fb-face--center { justify-content: center; align-items: center; text-align: center; }
+
+/* small type used across pages */
+.fb-meta { font-family: var(--f-mono); font-size: clamp(.5625rem, 2.5cqw, .75rem); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); }
+.fb-note { margin-block: 3cqw; max-width: 84%; font-family: var(--f-serif); font-style: italic; font-size: clamp(.9375rem, 4.6cqw, 1.3125rem); line-height: 1.4; }
+
+/* contents page */
+.fb-contents__title { margin-top: 2cqw; font-family: var(--f-display); font-size: clamp(1.375rem, 8cqw, 2.25rem); line-height: 1; }
+.fb-toc { margin-top: 8cqw; border-top: 1px solid var(--rule); }
+.fb-toc button {
+  display: flex;
+  align-items: baseline;
+  gap: 4cqw;
+  width: 100%;
+  min-height: 44px;
+  padding: 3.4cqw 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  font-family: var(--f-serif);
+  font-size: clamp(1rem, 5cqw, 1.375rem);
+  transition: color .3s, padding .5s var(--ease);
+}
+.fb-toc button:hover { padding-left: 1.5cqw; }
+.fb-toc .num { flex-shrink: 0; width: 9cqw; font-family: var(--f-mono); font-size: clamp(.625rem, 2.6cqw, .75rem); color: var(--ink-mute); }
+.fb-toc .tick { margin-left: auto; font-family: var(--f-hand); font-size: 1.4em; line-height: 0; color: var(--red); }
+.fb-contents__foot { margin-top: auto; padding-top: 4cqw; font-family: var(--f-serif); font-style: italic; font-size: clamp(.8125rem, 3.4cqw, 1rem); color: var(--ink-mute); }
+
+/* poem pages */
+.fb-poemhead { flex-shrink: 0; }
+.fb-poemhead .fb-title { margin-top: 2.5cqw; font-family: var(--f-display); font-size: clamp(1.375rem, 8cqw, 2.375rem); line-height: 1.02; }
+.fb-poemhead .fb-by { margin-top: 2.5cqw; }
+.fb-running { flex-shrink: 0; font-family: var(--f-serif); font-style: italic; font-size: clamp(.75rem, 3.2cqw, .9375rem); color: var(--ink-mute); }
+.fb-verse {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  margin: 7cqw 0 0;
+  font-family: var(--f-serif);
+  font-size: clamp(.875rem, 4.15cqw, 1.1875rem);
+  line-height: 1.6;
+  white-space: pre-wrap;        /* keeps every line break and space exactly */
+  overflow-wrap: break-word;
+  color: var(--ink);
+}
+.fb-sig { display: block; margin-top: .55em; font-style: italic; }
+.fb-foot { flex-shrink: 0; display: flex; justify-content: space-between; gap: 4cqw; padding-top: 4cqw; font-family: var(--f-mono); font-size: clamp(.5rem, 2.2cqw, .6875rem); letter-spacing: .1em; color: var(--ink-mute); }
+
+/* end-of-poem page */
+.fb-end__big { font-family: var(--f-display); font-size: clamp(1.375rem, 8.4cqw, 2.375rem); line-height: 1.05; }
+.fb-end__line { margin-top: 5cqw; font-family: var(--f-hand); font-size: clamp(1.5rem, 8cqw, 2.375rem); line-height: 1; color: var(--red); transform: rotate(-2deg); }
+.fb-end .btn-ink { margin-top: 7cqw; min-height: 46px; padding-inline: 5cqw; font-size: clamp(.625rem, 2.7cqw, .8125rem); }
+.fb-end__more { margin-top: 7cqw; display: grid; gap: 1cqw; justify-items: center; }
+.fb-end__more button { min-height: 40px; font-family: var(--f-serif); font-style: italic; font-size: clamp(.9375rem, 4.2cqw, 1.1875rem); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+.fb-end__more button:hover { text-decoration-color: var(--ink); }
+.fb-end__cover { margin-top: 4cqw; min-height: 40px; font-family: var(--f-mono); font-size: clamp(.5625rem, 2.5cqw, .75rem); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); }
+.fb-end__cover:hover { color: var(--ink); }
+
+.fb-backline { max-width: 82%; margin-bottom: 8cqw; font-family: var(--f-serif); font-style: italic; font-size: clamp(1.0625rem, 5.4cqw, 1.625rem); line-height: 1.35; }
+
+/* ── the book (JS) ─────────────────────────────────────────────── */
+.fb-book {
+  position: relative;
+  aspect-ratio: 4 / 3;                    /* two 2:3 pages side by side */
+  transition: transform 1s var(--ease), opacity .35s ease;
+}
+.fb-book.is-front { transform: translateX(-25%); }   /* closed: centre the cover */
+.fb-book.is-back  { transform: translateX(25%); }    /* back cover: centre it */
+.fb-book.is-jumping { opacity: 0; }
+
+.fb-leaf {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: left center;          /* the spine */
+  transition: transform 1s var(--ease);
+}
+.fb-leaf.is-flipped { transform: rotateY(-180deg); }
+.fb-leaf .fb-side--back { transform: rotateY(180deg); }
+
+/* shading near the spine */
+.fb-leaf .fb-face::before { content: ""; position: absolute; top: 0; bottom: 0; width: 9%; pointer-events: none; z-index: 2; }
+.fb-leaf .fb-side--front::before { left: 0; background: linear-gradient(90deg, rgb(0 0 0 / .13), transparent); }
+.fb-leaf .fb-side--back::before  { right: 0; background: linear-gradient(270deg, rgb(0 0 0 / .13), transparent); }
+.fb-leaf .fb-face--cover::before { width: 4%; }
+
+/* soft shadow sweeping over a page while it turns */
+.fb-leaf .fb-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(0 0 0 / .16), rgb(0 0 0 / .03) 60%, transparent);
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.fb-leaf.is-turning .fb-face::after { opacity: 1; }
+
+/* phone: one page at a time */
+.fb--single { max-width: 420px; }
+.fb--single .fb-book { aspect-ratio: 2 / 3; }
+.fb--single .fb-book.is-front, .fb--single .fb-book.is-back { transform: none; }
+.fb--single .fb-leaf { left: 0; width: 100%; }
+.fb--single .fb-leaf.is-flipped { opacity: 0; transition: transform 1s var(--ease), opacity .3s ease .55s; }
+
+/* hidden page used only to measure how much poem fits on a page */
+.fb-measure { position: absolute; left: -9999px; top: 0; visibility: hidden; pointer-events: none; }
+.fb-measure .fb-face { position: relative; inset: auto; aspect-ratio: 2 / 3; }
+
+.fb-controls { display: flex; align-items: center; justify-content: center; gap: var(--s-4); margin-top: var(--s-6); }
+.fb-status { min-width: 12rem; text-align: center; font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: .08em; color: var(--ink-mute); }
+.pager__arrow:disabled { opacity: .3; cursor: default; }
+
+.openbook__buy { display: grid; justify-items: center; gap: var(--s-3); margin-top: var(--s-7); text-align: center; }
+
+/* fewer animations: no turning motion, pages change instantly */
+@media (prefers-reduced-motion: reduce) {
+  .fb-leaf, .fb-book, .fb--single .fb-leaf.is-flipped { transition: none !important; }
+  .fb-leaf .fb-face::after { display: none; }
+}
   </style>
 
   <script>document.documentElement.classList.replace("no-js", "js");</script>
@@ -1010,8 +1175,15 @@ em { font-style: italic; }
     "author": { "@type": "Person", "name": "Mike Ramírez" },
     "genre": "Poetry",
     "inLanguage": "en",
-    "numberOfPages": "",
-    "bookEdition": "First edition",
+    "bookEdition": "First digital edition",
+    "bookFormat": "https://schema.org/EBook",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://payhip.com/b/4xL3e"
+    },
     "description": "Before I could name the world, I named the moon."
   }
   </script>
@@ -1068,7 +1240,7 @@ em { font-style: italic; }
 
       <div class="hero__meta wrap">
         <p class="meta">First edition / poetry collection</p>
-        <p class="meta">The manuscript is still growing</p>
+        <p class="meta">Out now — digital edition</p>
       </div>
 
       <div class="hero__cover wrap">
@@ -1111,7 +1283,7 @@ em { font-style: italic; }
         </div>
 
         <div class="hero__ctas">
-          <a class="btn-ink" href="#waitlist">Join the waitlist</a>
+          <a class="btn-ink" href="#book">Get the ebook</a>
           <a class="link-quiet pen-link" href="#pages">Read a page</a>
         </div>
       </div>
@@ -1336,7 +1508,136 @@ em { font-style: italic; }
       <p class="folio" aria-hidden="true">BEFORE ME, MOON / 06</p>
     </section>
 
-    <!-- ═══════════════════════ 07 — THE BOOK ═══════════════════════ -->
+    <!-- ═══════════════════════ 07 — OPEN THE BOOK (interactive preview) ═══════════════════════
+         A small book people can open and leaf through. They pick one of the
+         free poems from the contents page; the poem is laid out over as many
+         pages as it needs (automatically, on every screen size).
+         Without JavaScript the free poems are simply shown as text. -->
+    <section class="openbook page-sec" id="open-book" aria-labelledby="openbook-title">
+      <div class="wrap openbook__head">
+        <p class="meta">Free to read</p>
+        <h2 class="h2" id="openbook-title">Open the book.</h2>
+        <p class="lede">Some words are meant to be read slowly.</p>
+      </div>
+
+      <div class="wrap">
+        <!-- The book itself is built by the script from the poems below -->
+        <div class="fb" id="fb">
+          <div class="fb-book" id="fb-book" aria-roledescription="book" aria-label="Preview of BEFORE ME, MOON"></div>
+        </div>
+
+        <div class="fb-controls" id="fb-controls" hidden>
+          <button class="pager__arrow" type="button" id="fb-prev" aria-label="Previous page">←</button>
+          <p class="fb-status" id="fb-status" aria-live="polite"></p>
+          <button class="pager__arrow" type="button" id="fb-next" aria-label="Next page">→</button>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════════╗
+             ║  THE FREE PREVIEW POEMS — change them here                       ║
+             ║                                                                  ║
+             ║  One <article> per poem, in the order they appear on the         ║
+             ║  contents page.                                                  ║
+             ║  • data-number = poem number in the book (e.g. 033)              ║
+             ║  • data-title  = the title                                       ║
+             ║  • Paste the poem EXACTLY between <pre> and </pre>.              ║
+             ║    Start right after <pre> — every line break and space is       ║
+             ║    kept exactly as typed. Write < as &lt; and & as &amp;         ║
+             ║  • A poem with an empty <pre></pre> is skipped automatically.    ║
+             ║  • A last line starting with "— " (like — M.R) is set as the     ║
+             ║    signature, in italics, like in the book.                      ║
+             ║  • Page breaks happen by themselves, at stanza breaks if         ║
+             ║    possible.                                                     ║
+             ╚══════════════════════════════════════════════════════════════════╝ -->
+        <div class="fb-library" id="fb-library">
+
+          <article class="fb-poem" data-number="033" data-title="Efface">
+            <h3>Efface</h3>
+<pre>The streets turned cimmerian before
+I was ready to go home.
+
+Vesper settled over the rooftop before
+anyone noticed. The rain felt lustral but
+nothing in me came clean.
+
+I was walking in the park and kept
+meeting an epidolon of myself in old
+pictures I see in my head. I wanted
+something amaranthine in a life built to
+disappear.
+
+My thoughts took an anfractuous route
+back to the same wound that isn’t healed
+yet. I keep searching for the quiddity of
+home in rooms I am leaving. The morning felt
+ineluctable, even when I wanted the nights to
+stay. Your name still touches cadence my
+mouth remembers. Time tried to efface me
+but forgot the corners.
+— M.R</pre>
+          </article>
+
+          <article class="fb-poem" data-number="073" data-title="Verdict Name">
+            <h3>Verdict Name</h3>
+<pre>The walls still know my name, But the
+people have forgotten the letters of
+my stay, I wonder if this is A mezzanine.
+
+They gave me A deadline, But never told
+me when the waiting ends. Like A unfinished
+poem searching it's place in A world i
+cannot name.
+
+It took me years to learn that A door could
+stay open. Now I knock Before entering my
+own Life. Like A expiration date in
+transparent ink, evidence without sentence
+I could not even speak. Like my name it's
+meaning is A verdict instead of letters in
+A random order creating A soul.
+— M.R</pre>
+          </article>
+
+          <article class="fb-poem" data-number="002" data-title="I Just Wanna Be Pure">
+            <h3>I Just Wanna Be Pure</h3>
+<pre>Little kids shoot marbles
+where benches break the sun
+into graceful shafts of light.
+
+I just wanna be pure.
+
+Just wanna be pure.
+— M.R</pre>
+          </article>
+
+        </div>
+
+        <!-- Front cover of the mini book (same artwork as the Book section) -->
+        <template id="fb-cover-tpl">
+          <div class="cover-art" role="img" aria-label="Cover: BEFORE ME, MOON by Mike Ramírez">
+            <span class="cover-art__before">BEFORE ME,</span>
+            <svg class="cover-art__moon" viewBox="0 0 60 60" aria-hidden="true">
+              <g filter="url(#pen-soft)" fill="none" stroke="#111" stroke-width="1.1" stroke-linecap="round">
+                <circle cx="30" cy="30" r="22"/>
+                <path d="M18 14c-6 8-7 22 1 31M23 11c-7 9-8 25 1 37" opacity=".6"/>
+              </g>
+            </svg>
+            <span class="cover-art__moon-word">MOON</span>
+            <span class="cover-art__author">Mike Ramírez</span>
+            <svg class="cover-art__scratch" viewBox="0 0 200 20" aria-hidden="true" preserveAspectRatio="none"><path filter="url(#pen-soft)" d="M2 12C50 6 120 16 198 7" fill="none" stroke="#A3201B" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+        </template>
+
+        <!-- BUY (Payhip — same checkout and price as the Book section) -->
+        <div class="openbook__buy">
+          <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Continue reading — €9.99</a>
+          <p class="small">75 original poems. PDF + EPUB. Instant digital access.</p>
+        </div>
+      </div>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 07</p>
+    </section>
+
+    <!-- ═══════════════════════ 08 — THE BOOK ═══════════════════════ -->
     <section class="book page-sec" id="book" aria-labelledby="book-title">
       <div class="wrap book__grid">
         <div class="book__stage">
@@ -1365,40 +1666,50 @@ em { font-style: italic; }
         </div>
 
         <div class="book__text">
-          <p class="meta">The book</p>
-          <h2 class="h2" id="book-title">Still growing.<br><em>No chapters.</em></h2>
-          <p class="lede">Every poem starts on its own page.</p>
+          <p class="meta">The book — out now</p>
+          <h2 class="h2" id="book-title">Some books tell you a story.</h2>
+          <p class="sale__open">Others give words to the things you never knew how to explain.</p>
+
+          <div class="sale__body">
+            <p><span class="smallcaps">Before Me, Moon</span> is a collection of 75 original poems in English, each one first written by hand in a notebook.</p>
+            <p>Memory, identity, love, loss and freedom — set down personally, unfiltered, and sometimes uncomfortably close.</p>
+            <p>There is no single correct way to read them. A line may come to mean something to you that it never meant to the person who wrote it.</p>
+            <p class="sale__last">An independent collection. No chapters. Just the pages.</p>
+          </div>
 
           <dl class="spec">
-            <div><dt>Edition</dt><dd>First edition — in progress</dd></div>
-            <div><dt>Format</dt><dd>Paperback</dd></div>
-            <div><dt>Poems</dt><dd class="spec__tbd">The manuscript is still growing</dd></div>
+            <div><dt>Edition</dt><dd>First digital edition</dd></div>
+            <div><dt>Format</dt><dd>Ebook — PDF + EPUB</dd></div>
+            <div><dt>Poems</dt><dd>75 original poems</dd></div>
             <div><dt>Language</dt><dd>English</dd></div>
-            <div><dt>Release</dt><dd class="spec__tbd">To be announced</dd></div>
+            <div><dt>Paperback</dt><dd class="spec__tbd">Coming later</dd></div>
           </dl>
 
           <!-- ═══════════ BUY THE EBOOK (Payhip) ═══════════
                The button goes straight to Payhip checkout.
                Product page: https://payhip.com/b/4xL3e
-               If the price changes: change it in Payhip AND here. -->
+               Price: €9.99 — if it ever changes, change it in Payhip AND here. -->
           <div class="buy">
-            <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Buy the ebook · €9.99</a>
-            <p class="small">Secure checkout via Payhip. Instant PDF download.</p>
+            <div class="buy__actions">
+              <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Buy the ebook · €9.99</a>
+              <a class="link-quiet pen-link" href="#pages">Read a fragment first</a>
+            </div>
+            <p class="small">Secure checkout via Payhip. PDF + EPUB, instant download.</p>
+            <p class="small">Waiting for the paperback? <a class="buy__wl" href="#waitlist">Join the waitlist.</a></p>
           </div>
         </div>
       </div>
-      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 07</p>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 08</p>
     </section>
 
-    <!-- ═══════════════════════ 08 — WAITLIST ═══════════════════════ -->
+    <!-- ═══════════════════════ 09 — WAITLIST ═══════════════════════ -->
     <section class="waitlist page-sec" id="waitlist" aria-labelledby="waitlist-title">
       <div class="wrap waitlist__grid">
         <div class="waitlist__text">
           <h2 class="waitlist__title" id="waitlist-title">Be there before the first page turns.</h2>
-          <p class="lede">Join the waitlist for the first release of <span class="smallcaps">Before Me, Moon</span>.</p>
+          <p class="lede">The ebook is out. Join the list to hear first when the physical edition of <span class="smallcaps">Before Me, Moon</span> is ready.</p>
           <p class="meta waitlist__get">Get notified about</p>
           <ul class="ticks">
-            <li>the digital release</li>
             <li>the physical edition</li>
             <li>pre-orders</li>
             <li>release updates</li>
@@ -1438,7 +1749,7 @@ em { font-style: italic; }
 
             <details class="wl__privacy">
               <summary>How your email is used</summary>
-              <p>Your email (and name, if you give it) is used only to tell you about <em>Before Me, Moon</em>: the digital release, the physical edition, pre-orders. It’s never sold or shared. The list is kept by MailerLite (EU). To keep bots out, the form uses Google reCAPTCHA, which loads only when you start filling it in. Every email has an unsubscribe link. To have your details deleted, reply to any email.</p>
+              <p>Your email (and name, if you give it) is used only to tell you about <em>Before Me, Moon</em>: the physical edition, pre-orders and release updates. It’s never sold or shared. The list is kept by MailerLite (EU). To keep bots out, the form uses Google reCAPTCHA, which loads only when you start filling it in. Every email has an unsubscribe link. To have your details deleted, reply to any email.</p>
             </details>
           </form>
 
@@ -1450,10 +1761,10 @@ em { font-style: italic; }
           </div>
         </div>
       </div>
-      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 08</p>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 09</p>
     </section>
 
-    <!-- ═══════════════════════ 09 — TO THE PERSON HOLDING THIS BOOK ═══════════════════════ -->
+    <!-- ═══════════════════════ 10 — TO THE PERSON HOLDING THIS BOOK ═══════════════════════ -->
     <section class="reader page-sec" aria-labelledby="reader-title">
       <div class="wrap-narrow">
         <h2 class="meta reader__title" id="reader-title">To the person holding this book</h2>
@@ -1467,10 +1778,10 @@ em { font-style: italic; }
           <p class="reveal">But it needs someone else to become real.</p>
         </div>
       </div>
-      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 09</p>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 10</p>
     </section>
 
-    <!-- ═══════════════════════ 10 — FINAL PAGE ═══════════════════════ -->
+    <!-- ═══════════════════════ 11 — FINAL PAGE ═══════════════════════ -->
     <section class="final" aria-label="Final page">
       <div class="final__text">
         <p class="reveal">I thought this was the last page.</p>
@@ -1487,9 +1798,7 @@ em { font-style: italic; }
     </section>
   </main>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       ALL SCRIPTS (was script.js) — waitlist (MailerLite), pages, moon, menu
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- ALL SCRIPTS (was script.js): waitlist (MailerLite), pages, moon, menu, book preview -->
   <script>
 /* ═══════════════════════════════════════════════════════════════
    BEFORE ME, MOON — script.js
@@ -1893,6 +2202,342 @@ const WAITLIST_CONFIG = {
   }
 
   /* ── Back to the beginning — the site loops like the book ──── */
+  /* ── Open the book: page-turn preview with free poems ──────────
+     Reads the poems from #fb-library (HTML), builds the pages
+     (cover → inside cover → contents → chosen poem → end page →
+     back cover) and binds them into leaves that turn on the spine.
+     Desktop: two pages per leaf (a spread). Phone: one page per leaf. */
+  function initFlipbook() {
+    const fb = $("#fb");
+    const book = $("#fb-book");
+    const library = $("#fb-library");
+    if (!fb || !book || !library) return;
+
+    const poems = $$(".fb-poem", library)
+      .map((a) => ({
+        number: a.dataset.number || "",
+        title: a.dataset.title || "",
+        text: (a.querySelector("pre")?.textContent || "").replace(/\s+$/, ""),
+      }))
+      .filter((p) => p.text.trim());
+    if (!poems.length) return;
+
+    const prevBtn = $("#fb-prev");
+    const nextBtn = $("#fb-next");
+    const status = $("#fb-status");
+    const wide = matchMedia("(min-width: 760px)");
+    const TURN_MS = reducedMotion ? 0 : 1000;
+    const TOTAL_POEMS = 75;
+    const WORDS = { 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five" };
+    const MORE = { 70: "seventy", 71: "seventy-one", 72: "seventy-two", 73: "seventy-three", 74: "seventy-four" };
+
+    let spread = wide.matches;
+    let current = -1;          // index of the poem being read (-1 = none yet)
+    const read = new Set();    // poems already read
+    let faces = [];
+    let leaves = [];
+    let turned = 0;            // how many leaves are turned over
+    let busy = false;
+
+    const el = (tag, cls, html) => {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (html !== undefined) n.innerHTML = html;
+      return n;
+    };
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+    /* ── pages ── */
+    function coverFace() {
+      const f = el("div", "fb-face fb-face--cover");
+      f.appendChild($("#fb-cover-tpl").content.cloneNode(true));
+      f.dataset.label = "Front cover";
+      return f;
+    }
+    function insideFace() {
+      const f = el("div", "fb-face fb-face--center", `
+        <p class="fb-meta">Before Me, Moon</p>
+        <p class="fb-note">${WORDS[poems.length] || poems.length} of the seventy-five poems are open to read here, complete.</p>
+        <p class="fb-meta">Turn the page</p>`);
+      f.dataset.label = "Inside cover";
+      return f;
+    }
+    function contentsFace() {
+      const items = poems.map((p, i) => `
+        <li><button type="button" data-poem="${i}">
+          <span class="num">${esc(p.number)}</span><span>${esc(p.title)}</span>
+          ${read.has(i) ? '<span class="tick" aria-label="read">✓</span>' : ""}
+        </button></li>`).join("");
+      const f = el("div", "fb-face fb-contents", `
+        <p class="fb-meta">Free to read</p>
+        <p class="fb-contents__title">Contents</p>
+        <ol class="fb-toc">${items}</ol>
+        <p class="fb-contents__foot">Choose a poem. The other ${MORE[TOTAL_POEMS - poems.length] || TOTAL_POEMS - poems.length} are in the book.</p>`);
+      f.dataset.label = "Contents";
+      return f;
+    }
+    function endFace() {
+      const allRead = read.size === poems.length;
+      const unread = poems.map((p, i) => i).filter((i) => !read.has(i));
+      const top = allRead && poems.length === 3
+        ? `<p class="fb-end__big">You’ve read three.<br>There are seventy-two more.</p>`
+        : "";
+      const more = unread.length
+        ? `<div class="fb-end__more"><p class="fb-meta">Read another</p>${unread
+            .map((i) => `<button type="button" data-poem="${i}">${esc(poems[i].title)}</button>`).join("")}</div>`
+        : "";
+      const f = el("div", "fb-face fb-face--center fb-end", `
+        ${top}
+        <p class="fb-end__line">Some words are only the beginning.</p>
+        <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Discover the full collection — €9.99</a>
+        ${more}
+        <button type="button" class="fb-end__cover" data-cover>Back to the cover</button>`);
+      f.dataset.label = "End of preview";
+      return f;
+    }
+    function backFace() {
+      const f = el("div", "fb-face fb-face--back fb-face--center", `
+        <p class="fb-backline">It is about still being here when the page turns.</p>
+        <p class="fb-meta">Before Me, Moon — Mike Ramírez</p>`);
+      f.dataset.label = "Back cover";
+      return f;
+    }
+
+    /* A poem page. First page carries number + title; the rest a running title. */
+    function poemFace(p, first, text, n, total) {
+      const head = first
+        ? `<div class="fb-poemhead"><p class="fb-meta">Poem ${esc(p.number)}</p><h3 class="fb-title">${esc(p.title)}</h3><p class="fb-meta fb-by">Mike Ramírez</p></div>`
+        : `<p class="fb-running">${esc(p.title)}</p>`;
+      const f = el("div", "fb-face fb-face--poem", `${head}<pre class="fb-verse"></pre>
+        <div class="fb-foot"><span>BEFORE ME, MOON</span><span class="fb-count">${n} / ${total}</span></div>`);
+      // the signature line (— M.R) is set in italics, like in the book
+      const verse = $(".fb-verse", f);
+      const m = text.match(/^([\s\S]*?)\n(— [^\n]*)$/);
+      if (m) {
+        verse.textContent = m[1];
+        verse.appendChild(el("span", "fb-sig")).textContent = m[2];
+      } else {
+        verse.textContent = text;
+      }
+      f.dataset.label = `${p.title}, page ${n} of ${total}`;
+      return f;
+    }
+
+    /* Lay a poem out over as many pages as needed. Breaks at stanzas when possible,
+       never changes the text itself — only where a page ends. */
+    function paginate(p) {
+      const width = spread ? book.clientWidth / 2 : book.clientWidth;
+      const measure = el("div", "fb-measure");
+      book.appendChild(measure);
+      const fits = (first, text) => {
+        measure.innerHTML = "";
+        const f = poemFace(p, first, text, 1, 1);
+        f.style.width = `${width}px`;
+        measure.appendChild(f);
+        const v = $(".fb-verse", f);
+        return v.scrollHeight <= v.clientHeight + 1;
+      };
+
+      const lines = p.text.split("\n");
+      const stanzas = [];
+      let cur = [];
+      lines.forEach((l) => {
+        if (l.trim() === "") { if (cur.length) { stanzas.push(cur); cur = []; } stanzas.push(null); }
+        else cur.push(l);
+      });
+      if (cur.length) stanzas.push(cur);
+
+      const pages = [];
+      let page = [];
+      const flush = () => {
+        while (page.length && page[page.length - 1] === "") page.pop();
+        if (page.length) pages.push(page.join("\n"));
+        page = [];
+      };
+      const tryAdd = (chunk) => fits(pages.length === 0, [...page, ...chunk].join("\n"));
+
+      stanzas.forEach((st) => {
+        if (st === null) { if (page.length) page.push(""); return; }
+        if (tryAdd(st)) { page.push(...st); return; }
+        if (page.some((l) => l !== "")) flush();         // stanza starts on a new page
+        st.forEach((line) => {                             // still too long: break inside it
+          if (!tryAdd([line]) && page.length) flush();
+          page.push(line);
+        });
+      });
+      flush();
+      measure.remove();
+      return pages.length ? pages : [p.text];
+    }
+
+    /* ── binding the pages into leaves ── */
+    function rebuild(keepTurned) {
+      faces = [coverFace(), insideFace(), contentsFace()];
+      if (current >= 0) {
+        const p = poems[current];
+        const parts = paginate(p);
+        parts.forEach((t, i) => faces.push(poemFace(p, i === 0, t, i + 1, parts.length)));
+        faces.push(endFace());
+        // in a spread the back cover must be the back of the last leaf (left side)
+        if (spread && faces.length % 2 === 0) faces.push(el("div", "fb-face fb-face--blank"));
+        faces.push(backFace());
+      }
+      leaves.forEach((l) => l.remove());
+      leaves = [];
+      const per = spread ? 2 : 1;
+      for (let i = 0; i < faces.length; i += per) {
+        const leaf = el("div", "fb-leaf");
+        faces[i].classList.add("fb-side--front");
+        leaf.appendChild(faces[i]);
+        if (spread && faces[i + 1]) {
+          faces[i + 1].classList.add("fb-side--back");
+          leaf.appendChild(faces[i + 1]);
+        }
+        book.appendChild(leaf);
+        leaves.push(leaf);
+      }
+      fb.classList.toggle("fb--single", !spread);
+      turned = Math.min(keepTurned, maxTurn());
+      render();
+    }
+
+    // furthest view: the one that shows the last page
+    const maxTurn = () => (spread ? Math.ceil((faces.length - 1) / 2) : faces.length - 1);
+    // the view that shows a given page
+    const viewOf = (faceIndex) => (spread ? Math.ceil(faceIndex / 2) : faceIndex);
+
+    function visibleFaces() {
+      if (!spread) return [faces[turned]];
+      return [faces[turned * 2 - 1], faces[turned * 2]].filter(Boolean);
+    }
+
+    function render() {
+      const n = leaves.length;
+      leaves.forEach((leaf, i) => {
+        const flipped = i < turned;
+        leaf.classList.toggle("is-flipped", flipped);
+        leaf.style.zIndex = String(flipped ? i + 1 : 2 * n - i);
+      });
+      book.classList.toggle("is-front", spread && turned === 0);
+      book.classList.toggle("is-back", spread && turned * 2 >= faces.length);
+
+      const shown = visibleFaces();
+      faces.forEach((f) => {
+        const on = shown.includes(f);
+        f.setAttribute("aria-hidden", on ? "false" : "true");
+        f.inert = !on;
+      });
+      prevBtn.disabled = turned === 0;
+      nextBtn.disabled = turned >= maxTurn();
+      status.textContent = shown.map((f) => f.dataset.label).join("  ·  ");
+    }
+
+    function go(dir) {
+      const target = turned + dir;
+      if (busy || target < 0 || target > maxTurn()) return;
+      busy = true;
+      const leaf = leaves[dir > 0 ? turned : turned - 1];
+      leaf.classList.add("is-turning");
+      leaf.style.zIndex = String(leaves.length * 3);
+      leaf.classList.toggle("is-flipped", dir > 0);
+      turned = target;
+      prevBtn.disabled = turned === 0;
+      nextBtn.disabled = turned >= maxTurn();
+      setTimeout(() => {
+        leaf.classList.remove("is-turning");
+        render();
+        busy = false;
+      }, TURN_MS);
+    }
+
+    // jump without turning every page in between (short fade)
+    function jumpTo(view, then) {
+      busy = true;
+      book.classList.add("is-jumping");
+      setTimeout(() => {
+        turned = view;
+        render();
+        book.classList.remove("is-jumping");
+        busy = false;
+        if (then) then();
+      }, reducedMotion ? 0 : 350);
+    }
+
+    function openPoem(i) {
+      if (busy) return;
+      const contentsView = viewOf(2);
+      const start = () => {
+        go(1);
+        setTimeout(() => { const first = faces[3]; if (first) { first.tabIndex = -1; first.focus({ preventScroll: true }); } }, TURN_MS + 20);
+      };
+      const load = () => { current = i; read.add(i); rebuild(contentsView); };
+
+      if (turned === contentsView) { load(); start(); return; }
+      // from the end page: fade back to the contents, then open the new poem
+      busy = true;
+      book.classList.add("is-jumping");
+      setTimeout(() => {
+        load();
+        book.classList.remove("is-jumping");
+        busy = false;
+        start();
+      }, reducedMotion ? 0 : 350);
+    }
+
+    /* ── controls ── */
+    prevBtn.addEventListener("click", () => go(-1));
+    nextBtn.addEventListener("click", () => go(1));
+
+    book.addEventListener("click", (e) => {
+      const poemBtn = e.target.closest("[data-poem]");
+      if (poemBtn) { openPoem(Number(poemBtn.dataset.poem)); return; }
+      if (e.target.closest("[data-cover]")) { jumpTo(0); return; }
+      if (e.target.closest("a, button")) return;
+      // click the right half to turn forward, the left half to go back
+      const r = book.getBoundingClientRect();
+      const forward = e.clientX > r.left + r.width / 2;
+      if (forward && turned === viewOf(2) && current < 0) return; // choose a poem first
+      go(forward ? 1 : -1);
+    });
+
+    // swipe on touch screens
+    let sx = null, sy = null;
+    book.addEventListener("pointerdown", (e) => { sx = e.clientX; sy = e.clientY; });
+    book.addEventListener("pointerup", (e) => {
+      if (sx === null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { book.dataset.swiped = "1"; go(dx < 0 ? 1 : -1); }
+    });
+    book.addEventListener("click", (e) => {
+      if (book.dataset.swiped) { e.stopImmediatePropagation(); delete book.dataset.swiped; }
+    }, true);
+
+    $("#open-book").addEventListener("keydown", (e) => {
+      if (e.target.matches("input, textarea")) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+    });
+
+    // re-lay out when the screen changes size (keeps the reader roughly in place)
+    let lastWidth = 0;
+    const relayout = () => {
+      const w = book.clientWidth;
+      const nowSpread = wide.matches;
+      if (Math.abs(w - lastWidth) < 8 && nowSpread === spread) return;
+      lastWidth = w;
+      const firstShown = spread ? Math.max(0, turned * 2 - 1) : turned;
+      spread = nowSpread;
+      rebuild(viewOf(firstShown));
+    };
+    let rt;
+    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(relayout, 200); });
+
+    $("#fb-controls").hidden = false;
+    const start = () => { lastWidth = book.clientWidth; rebuild(0); };
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(start);
+  }
+
   function initLoop() {
     const back = $(".final__back");
     if (!back) return;
@@ -1910,6 +2555,7 @@ const WAITLIST_CONFIG = {
   initReveal();
   initPages();
   initWaitlist();
+  initFlipbook();
   initLoop();
 })();
   </script>
