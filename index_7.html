@@ -1,4 +1,4 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
@@ -1083,6 +1083,7 @@ em { font-style: italic; }
   overflow-wrap: break-word;
   color: var(--ink);
 }
+.fb-sig { display: block; margin-top: .55em; font-style: italic; }
 .fb-foot { flex-shrink: 0; display: flex; justify-content: space-between; gap: 4cqw; padding-top: 4cqw; font-family: var(--f-mono); font-size: clamp(.5rem, 2.2cqw, .6875rem); letter-spacing: .1em; color: var(--ink-mute); }
 
 /* end-of-poem page */
@@ -1542,6 +1543,8 @@ em { font-style: italic; }
              ║    Start right after <pre> — every line break and space is       ║
              ║    kept exactly as typed. Write < as &lt; and & as &amp;         ║
              ║  • A poem with an empty <pre></pre> is skipped automatically.    ║
+             ║  • A last line starting with "— " (like — M.R) is set as the     ║
+             ║    signature, in italics, like in the book.                      ║
              ║  • Page breaks happen by themselves, at stanza breaks if         ║
              ║    possible.                                                     ║
              ╚══════════════════════════════════════════════════════════════════╝ -->
@@ -1570,14 +1573,28 @@ ineluctable, even when I wanted the nights to
 stay. Your name still touches cadence my
 mouth remembers. Time tried to efface me
 but forgot the corners.
-
 — M.R</pre>
           </article>
 
-          <!-- Poem 073 — paste the exact text from the First Digital Edition between <pre> and </pre> -->
           <article class="fb-poem" data-number="073" data-title="Verdict Name">
             <h3>Verdict Name</h3>
-<pre></pre>
+<pre>The walls still know my name, But the
+people have forgotten the letters of
+my stay, I wonder if this is A mezzanine.
+
+They gave me A deadline, But never told
+me when the waiting ends. Like A unfinished
+poem searching it's place in A world i
+cannot name.
+
+It took me years to learn that A door could
+stay open. Now I knock Before entering my
+own Life. Like A expiration date in
+transparent ink, evidence without sentence
+I could not even speak. Like my name it's
+meaning is A verdict instead of letters in
+A random order creating A soul.
+— M.R</pre>
           </article>
 
           <article class="fb-poem" data-number="002" data-title="I Just Wanna Be Pure">
@@ -1588,7 +1605,8 @@ into graceful shafts of light.
 
 I just wanna be pure.
 
-Just wanna be pure.</pre>
+Just wanna be pure.
+— M.R</pre>
           </article>
 
         </div>
@@ -2292,7 +2310,15 @@ const WAITLIST_CONFIG = {
         : `<p class="fb-running">${esc(p.title)}</p>`;
       const f = el("div", "fb-face fb-face--poem", `${head}<pre class="fb-verse"></pre>
         <div class="fb-foot"><span>BEFORE ME, MOON</span><span class="fb-count">${n} / ${total}</span></div>`);
-      $(".fb-verse", f).textContent = text;
+      // the signature line (— M.R) is set in italics, like in the book
+      const verse = $(".fb-verse", f);
+      const m = text.match(/^([\s\S]*?)\n(— [^\n]*)$/);
+      if (m) {
+        verse.textContent = m[1];
+        verse.appendChild(el("span", "fb-sig")).textContent = m[2];
+      } else {
+        verse.textContent = text;
+      }
       f.dataset.label = `${p.title}, page ${n} of ${total}`;
       return f;
     }
