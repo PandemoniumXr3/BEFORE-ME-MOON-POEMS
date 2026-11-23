@@ -1,0 +1,2537 @@
+<<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ─────────────────────────────────────────────────────────
+       SEO / SHARING
+       Replace https://YOUR-DOMAIN.com with the final domain (3×),
+       and add a 1200×630 share image at /og-image.jpg.
+       ───────────────────────────────────────────────────────── -->
+  <title>BEFORE ME, MOON — Mike Ramírez</title>
+  <meta name="description" content="BEFORE ME, MOON is a poetry collection by Mike Ramírez exploring memory, childhood, addiction, identity, freedom, hospitals, love and the places we return to.">
+  <meta name="author" content="Mike Ramírez">
+  <link rel="canonical" href="https://YOUR-DOMAIN.com/">
+
+  <meta property="og:type" content="book">
+  <meta property="og:site_name" content="BEFORE ME, MOON">
+  <meta property="og:title" content="BEFORE ME, MOON — Mike Ramírez">
+  <meta property="og:description" content="Before I could name the world, I named the moon. 75 poems. Out now as an ebook.">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com/">
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg"><!-- placeholder: social preview image -->
+  <meta property="og:image:alt" content="BEFORE ME, MOON — poetry by Mike Ramírez">
+  <meta property="book:author" content="Mike Ramírez">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BEFORE ME, MOON — Mike Ramírez">
+  <meta name="twitter:description" content="Before I could name the world, I named the moon.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-image.jpg">
+
+  <meta name="theme-color" content="#EAE6DE">
+  <meta name="color-scheme" content="light">
+  <!-- Favicon placeholder: a crescent drawn inline. Swap for /favicon.png later if you like. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23EAE6DE'/%3E%3Cpath d='M40 10a22 22 0 1 0 14 36A18 18 0 1 1 40 10z' fill='none' stroke='%23111' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Caslon+Display&family=Reenie+Beanie&display=swap">
+  <!-- ALL STYLES (was style.css) -->
+  <style>
+/* ═══════════════════════════════════════════════════════════════
+   BEFORE ME, MOON
+   1  Tokens            6  Pages (manuscript browser)
+   2  Base              7  Blurb · Note · Interlude
+   3  Type system       8  Notebooks · Book
+   4  Shared pieces     9  Waitlist · Reader · Final
+   5  Nav · Hero       10  Motion
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1  Tokens ───────────────────────────────────────────────── */
+:root {
+  /* paper & ink */
+  --paper: #EAE6DE;
+  --paper-deep: #E1DCD2;
+  --paper-light: #F3F0EA;
+  --ink: #111111;
+  --ink-soft: #2E2C29;
+  --ink-mute: #5F5B55;
+  --rule: rgb(17 17 17 / .14);
+  --red: #A3201B;        /* proofreader's pen — use sparingly */
+  --blue: #23408E;       /* ballpoint */
+
+  /* type */
+  --f-display: "Libre Caslon Display", "Big Caslon", "Times New Roman", serif;
+  --f-serif: "EB Garamond", Garamond, Georgia, serif;
+  --f-mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --f-hand: "Reenie Beanie", "Bradley Hand", "Segoe Print", cursive;
+
+  --t-meta: .8125rem;
+  --t-small: .9375rem;
+  --t-body: clamp(1.125rem, 1.04rem + .35vw, 1.3125rem);
+  --t-lead: clamp(1.25rem, 1.1rem + .7vw, 1.625rem);
+  --t-quote: clamp(1.875rem, 1.3rem + 2.6vw, 3.5rem);
+  --t-h2: clamp(2.375rem, 1.6rem + 3.4vw, 4.75rem);
+  --t-hand: clamp(1.5rem, 1.25rem + .9vw, 2.125rem);
+
+  /* spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 144px;
+  --s-11: 208px;
+
+  --gutter: clamp(20px, 5vw, 64px);
+  --max: 1320px;
+  --section-y: clamp(var(--s-9), 14vw, var(--s-11));
+
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --slow: 1.4s;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .07 0 0 0 0 .06 0 0 0 0 .05 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ── 2  Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--s-8);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(1200px 700px at 12% -10%, rgb(255 255 255 / .35), transparent 60%),
+    radial-gradient(900px 600px at 100% 40%, rgb(120 100 70 / .05), transparent 70%);
+  font-family: var(--f-serif);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* paper grain over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background-image: var(--grain);
+  opacity: .22;
+  mix-blend-mode: multiply;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+h1, h2, h3 { font-weight: 400; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+mark { background: none; color: inherit; }
+em { font-style: italic; }
+[hidden] { display: none !important; }
+
+::selection { background: rgb(163 32 27 / .18); }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.skip-link {
+  position: fixed; left: var(--s-4); top: calc(-1 * var(--s-8)); z-index: 100;
+  padding: var(--s-2) var(--s-4); background: var(--ink); color: var(--paper);
+  font-family: var(--f-mono); font-size: var(--t-meta);
+}
+.skip-link:focus { top: var(--s-4); }
+
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.wrap-narrow { width: 100%; max-width: 40rem; margin-inline: auto; padding-inline: var(--gutter); }
+
+/* ── 3  Type system ──────────────────────────────────────────── */
+.meta {
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.h2 {
+  font-family: var(--f-display);
+  font-size: var(--t-h2);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+.h2 em { font-family: var(--f-serif); font-style: italic; }
+.lede { max-width: 32rem; font-size: var(--t-lead); line-height: 1.45; color: var(--ink-soft); }
+.small { font-size: var(--t-small); color: var(--ink-mute); }
+.smallcaps { font-variant: small-caps; letter-spacing: .06em; text-transform: lowercase; font-variant-caps: all-small-caps; }
+
+.hand { font-family: var(--f-hand); font-size: var(--t-hand); line-height: 1; font-weight: 400; }
+.hand--red { color: var(--red); }
+.hand--blue { color: var(--blue); }
+
+/* ── 4  Shared pieces ────────────────────────────────────────── */
+.page-sec { position: relative; padding-block: var(--section-y); }
+
+/* page number, bottom-right — like the printed book */
+.folio {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--s-6);
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  color: var(--ink-mute);
+}
+
+/* primary action — an ink-stamped label, not a SaaS button */
+.btn-ink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: var(--s-3) var(--s-6);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: background-color .4s, transform .4s var(--ease);
+}
+.btn-ink::after { /* rough ink edge */
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--ink);
+  transform: translate(3px, 3px);
+  transition: transform .4s var(--ease);
+  pointer-events: none;
+}
+.btn-ink:hover { background: var(--ink-soft); }
+.btn-ink:hover::after { transform: translate(5px, 5px); }
+.btn-ink:active { transform: translate(2px, 2px); }
+.btn-ink--full { width: 100%; }
+.btn-ink:disabled { cursor: wait; opacity: .7; }
+
+/* pen-stroke underline on hover (nav, quiet links) */
+.pen-link {
+  position: relative;
+  display: inline-block;
+  padding-block: var(--s-2);
+}
+.pen-link::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 2px;
+  height: 7px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5.5C20 3 45 6.5 62 4.2S88 3 99 4.6' fill='none' stroke='%23111' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100%;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .5s var(--ease);
+}
+.pen-link--red::after { filter: invert(14%) sepia(82%) saturate(4000%) hue-rotate(352deg) brightness(80%); }
+.pen-link:hover::after, .pen-link:focus-visible::after { clip-path: inset(0 0 0 0); }
+
+.link-quiet {
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* faint ink stain */
+.stain {
+  position: absolute;
+  width: 220px;
+  height: 180px;
+  border-radius: 46% 54% 40% 60% / 55% 45% 55% 45%;
+  background: radial-gradient(closest-side, rgb(60 45 25 / .07), rgb(60 45 25 / .03) 70%, transparent);
+  pointer-events: none;
+}
+
+/* hand-drawn red underline for a phrase */
+.ink-under, .blurb__strong {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M1 6.5C18 4 40 7.8 60 5.5S86 3.6 99 5.8' fill='none' stroke='%23A3201B' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% .32em;
+  padding-bottom: .08em;
+  transition: background-size 1.1s var(--ease);
+}
+
+/* red circle around a phrase */
+.circle-red { position: relative; white-space: nowrap; }
+.circle-red::before {
+  content: "";
+  position: absolute;
+  inset: -.02em -.14em -.04em -.16em;
+  border: 1.5px solid var(--red);
+  border-radius: 52% 48% 55% 45% / 60% 50% 50% 40%;
+  transform: rotate(-2deg);
+  opacity: 0;
+  transition: opacity 1s var(--ease) .5s;
+  pointer-events: none;
+}
+.is-in .circle-red::before, .circle-red.is-in::before, .no-js .circle-red::before { opacity: .85; }
+
+/* ── 5  Navigation ───────────────────────────────────────────── */
+.progress { position: fixed; inset: 0 0 auto; z-index: 60; height: 2px; pointer-events: none; }
+.progress__ink {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--ink);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  opacity: .8;
+}
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  transition: background-color .6s, box-shadow .6s, transform .6s var(--ease);
+}
+.nav.is-scrolled {
+  background: rgb(234 230 222 / .88);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 var(--rule);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  max-width: var(--max);
+  height: 60px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 44px;
+  font-family: var(--f-display);
+  font-size: 1.0625rem;
+  letter-spacing: .06em;
+}
+.nav__phase { display: inline-flex; width: 14px; height: 14px; }
+.nav__links ul { display: flex; gap: var(--s-6); }
+.nav__links a {
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.nav__links a.pen-link--red { color: var(--red); }
+.nav__toggle {
+  display: none;
+  min-height: 44px;
+  min-width: 44px;
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* mobile menu: a full paper page */
+@media (max-width: 767px) {
+  .js .nav__toggle { display: inline-flex; align-items: center; justify-content: flex-end; }
+  .js .nav__links {
+    position: fixed;
+    inset: 60px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--gutter);
+    background: var(--paper);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility 0s .4s;
+  }
+  .js .nav.is-open .nav__links { visibility: visible; opacity: 1; transition: opacity .4s; }
+  .js .nav__links ul { flex-direction: column; gap: var(--s-2); }
+  .js .nav__links a { font-family: var(--f-display); font-size: 2.75rem; letter-spacing: 0; text-transform: none; }
+  .js .nav.is-open { background: var(--paper); box-shadow: 0 1px 0 var(--rule); }
+  .no-js .nav__links ul { gap: var(--s-4); }
+  .no-js .nav__logo { font-size: .875rem; }
+}
+
+/* ── 5  Hero / cover ─────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-block: calc(60px + var(--s-6)) var(--s-9);
+  overflow: hidden;
+}
+.hero__fold { /* the faintest vertical fold, like a cover that's been opened */
+  position: absolute;
+  inset: 0 auto 0 61%;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, rgb(0 0 0 / .018) 45%, rgb(255 255 255 / .18) 55%, transparent);
+  pointer-events: none;
+}
+@media (max-width: 767px) { .hero__fold { display: none; } }
+
+.hero__meta { display: flex; justify-content: space-between; gap: var(--s-4); }
+@media (max-width: 479px) { .hero__meta .meta + .meta { display: none; } }
+
+.hero__cover {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--s-8) var(--s-7);
+}
+.hero__title { position: relative; z-index: 2; text-transform: uppercase; }
+.hero__before {
+  display: block;
+  font-family: var(--f-display);
+  font-size: clamp(1.75rem, 1rem + 4.2vw, 5rem);
+  line-height: 1;
+  letter-spacing: .04em;
+  padding-left: .06em;
+  animation: rise 1.6s var(--ease) .2s both;
+}
+.hero__moon-word {
+  display: block;
+  margin-top: .02em;
+  font-family: var(--f-display);
+  font-size: clamp(5.25rem, .4rem + 25.5vw, 21rem);
+  line-height: .8;
+  letter-spacing: -.035em;
+  margin-left: -.05em;
+  animation: rise 1.8s var(--ease) .4s both;
+}
+
+.hero__moon {
+  position: absolute;
+  z-index: 1;
+  right: var(--gutter);
+  top: 4%;
+  width: clamp(128px, 34vw, 360px);
+  animation: fade 2.4s ease .9s both;
+}
+.moon-drawing {
+  width: 100%;
+  height: auto;
+  transform: translate(var(--mx, 0px), var(--my, 0px)) rotate(var(--mr, 0deg));
+  transition: transform 1.6s var(--ease);
+}
+
+.hero__mark { /* in the flow on mobile: tucked under MOON, pointing up at it */
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+  padding-right: 8%;
+  color: var(--red);
+  transform: rotate(-5deg);
+  animation: fade 1.2s ease 1.6s both;
+}
+.hero__mark .hand { font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.75rem); }
+.hero__arrow { width: clamp(44px, 6vw, 84px); flex-shrink: 0; margin-bottom: .55em; }
+
+.hero__foot {
+  display: grid;
+  gap: var(--s-6);
+  animation: rise 1.6s var(--ease) .9s both;
+}
+.hero__author {
+  font-family: var(--f-serif);
+  font-size: clamp(1.125rem, 1rem + .6vw, 1.5rem);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.hero__tagline {
+  margin-top: var(--s-3);
+  max-width: 26rem;
+  font-style: italic;
+  font-size: var(--t-lead);
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+.hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
+
+@media (min-width: 768px) {
+  .hero__foot { grid-template-columns: 1fr auto; align-items: end; }
+  .hero__moon { top: 2%; right: calc(var(--gutter) + 4%); }
+  .hero__mark { position: absolute; right: var(--gutter); bottom: 14%; margin: 0; padding: 0; }
+}
+@media (min-width: 1100px) {
+  .hero__moon { top: -2%; right: calc(var(--gutter) + 8%); }
+  .hero__mark { right: calc(var(--gutter) + 2%); bottom: 16%; }
+}
+
+/* ── 6  Epigraph ─────────────────────────────────────────────── */
+.epigraph { padding-block: clamp(var(--s-10), 22vw, 320px); }
+.epigraph__flight {
+  position: absolute;
+  top: clamp(var(--s-7), 8vw, var(--s-9));
+  left: 50%;
+  width: min(600px, 86vw);
+  transform: translateX(-50%);
+  opacity: .7;
+}
+.epigraph__text { text-align: center; }
+.epigraph__text p {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: var(--t-quote);
+  line-height: 1.25;
+}
+.epigraph__text p + p { margin-top: var(--s-6); }
+.epigraph__last { margin-top: var(--s-2) !important; }
+
+/* ── 6  Pages (manuscript browser) ───────────────────────────── */
+.pages { background: linear-gradient(var(--paper), var(--paper-deep) 30%, var(--paper-deep) 70%, var(--paper)); }
+.pages__head { display: grid; gap: var(--s-4); }
+.pages__head .h2 { margin-top: var(--s-2); }
+.pages__desk { margin-top: var(--s-8); }
+
+.stack { display: grid; gap: var(--s-7); }
+.ms-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(420px, 62vw, 560px);
+  max-width: 560px;
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(var(--s-5), 5vw, var(--s-8));
+  background: var(--paper-light);
+  box-shadow:
+    0 1px 0 rgb(0 0 0 / .04),
+    0 30px 60px -30px rgb(40 30 15 / .35),
+    0 12px 20px -14px rgb(40 30 15 / .2);
+}
+.ms-page::before { /* folded corner */
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(225deg, var(--paper-deep) 50%, rgb(0 0 0 / .06) 50%, var(--paper-light) 62%);
+}
+.ms-page__head, .ms-page__folio {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ms-page__head span:last-child { text-transform: none; font-family: var(--f-serif); font-style: italic; font-size: var(--t-small); letter-spacing: 0; }
+.ms-page__text {
+  margin-block: auto;
+  padding-block: var(--s-8);
+  font-family: var(--f-serif);
+  font-size: clamp(1.625rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.ms-page__note {
+  position: absolute;
+  right: clamp(var(--s-4), 4vw, var(--s-7));
+  bottom: clamp(var(--s-8), 9vw, 96px);
+  transform: rotate(-4deg);
+  opacity: 0;
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+.ms-page__folio { justify-content: flex-end; gap: var(--s-3); }
+.ms-page__folio span:first-child::after { content: "  ·"; }
+.ms-page:hover .ms-page__note, .ms-page:focus-within .ms-page__note, .ms-page.is-current .ms-page__note { opacity: 1; transform: rotate(-4deg) translateY(-2px); }
+.ms-page:hover .ink-under, .ms-page.is-current .ink-under, .no-js .ink-under { background-size: 100% .32em; }
+
+/* JS: a stack of pages, one on top */
+.js .stack {
+  position: relative;
+  display: block;
+  height: clamp(440px, 64vw, 580px);
+  max-width: 560px;
+  margin-inline: auto;
+}
+.js .ms-page {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  transform: rotate(var(--rot, 0deg)) translate(var(--tx, 0), var(--ty, 0));
+  transition: transform .9s var(--ease), opacity .6s ease;
+}
+.js .ms-page:not(.is-current) { pointer-events: none; }
+.js .ms-page:not(.is-current) > * { opacity: 0; transition: opacity .3s; }
+.js .ms-page.is-current > * { opacity: 1; transition: opacity .6s .15s; }
+.js .ms-page.is-current .ms-page__note { opacity: 0; }
+.js .ms-page.is-current:hover .ms-page__note,
+.js .ms-page.is-current:focus-within .ms-page__note,
+.js .ms-page.is-noted .ms-page__note { opacity: 1; }
+.js .ms-page.is-leaving { transform: rotate(-9deg) translate(-110%, 4%); opacity: 0; }
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  margin-top: var(--s-7);
+}
+.pager__arrow {
+  width: 48px;
+  height: 48px;
+  font-size: 1.375rem;
+  border-radius: 50%;
+  transition: background-color .3s;
+}
+.pager__arrow:hover { background: rgb(17 17 17 / .06); }
+.pager__nums { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; }
+.pager__nums button {
+  position: relative;
+  min-width: 40px;
+  height: 44px;
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  color: var(--ink-mute);
+  transition: color .3s;
+}
+.pager__nums button:hover { color: var(--ink); }
+.pager__nums button[aria-current="true"] { color: var(--ink); }
+.pager__nums button[aria-current="true"]::after { /* red proofreader circle */
+  content: "";
+  position: absolute;
+  inset: 6px 3px;
+  border: 1.4px solid var(--red);
+  border-radius: 55% 45% 50% 50% / 50% 55% 45% 50%;
+  transform: rotate(-6deg);
+}
+
+/* ── 7  Blurb (back cover) ───────────────────────────────────── */
+.blurb__grid { display: grid; gap: var(--s-8); }
+.blurb__open { font-family: var(--f-display); font-size: var(--t-quote); line-height: 1.12; }
+.blurb__open span { display: block; }
+.blurb__open span + span { margin-top: var(--s-5); color: var(--ink-soft); }
+.blurb__body { max-width: 34rem; display: grid; gap: var(--s-5); color: var(--ink-soft); }
+.blurb__turn { font-style: italic; font-size: var(--t-lead); color: var(--ink); }
+.blurb__list { display: grid; gap: var(--s-2); padding-left: var(--s-5); border-left: 1px solid var(--rule); font-style: italic; }
+.blurb__close {
+  margin-top: var(--s-10);
+  font-family: var(--f-serif);
+  font-size: clamp(2rem, 1.2rem + 4vw, 5.25rem);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.blurb__strong { background-size: 0% .22em; }
+.blurb__close.is-in .blurb__strong, .no-js .blurb__strong { background-size: 100% .22em; transition-delay: .5s; }
+@media (min-width: 900px) {
+  .blurb__grid { grid-template-columns: 7fr 5fr; column-gap: var(--s-9); align-items: start; }
+  .blurb__body { padding-top: var(--s-3); }
+}
+
+/* ── 7  A Note Before You Read — set as a book page ──────────── */
+.note { padding-inline: var(--gutter); }
+.book-page {
+  position: relative;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: clamp(var(--s-7), 8vw, 112px) clamp(var(--s-5), 7vw, 96px);
+  background: var(--paper-light);
+  box-shadow: 0 40px 80px -40px rgb(40 30 15 / .35), 0 2px 0 rgb(0 0 0 / .03);
+}
+.book-page::after { /* gutter shadow on the left edge, as if bound */
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 36px;
+  background: linear-gradient(90deg, rgb(0 0 0 / .07), transparent);
+  pointer-events: none;
+}
+.book-page__title {
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink-mute);
+}
+.book-page__body { margin-top: var(--s-8); display: grid; gap: 1.05em; font-size: var(--t-body); line-height: 1.7; hanging-punctuation: first; }
+.book-page__last { margin-top: var(--s-4); font-style: italic; }
+.book-page__sign { margin-top: var(--s-2); text-align: right; font-style: italic; color: var(--ink-mute); }
+
+/* ── 7  Interlude ────────────────────────────────────────────── */
+.interlude { padding: var(--section-y) var(--gutter); text-align: center; }
+.interlude__line {
+  font-family: var(--f-display);
+  font-size: clamp(2.25rem, 1rem + 6vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -.015em;
+}
+.interlude__src { margin-top: var(--s-6); }
+
+/* ── 8  Notebooks ────────────────────────────────────────────── */
+.notebooks__head { display: grid; gap: var(--s-4); }
+.notebooks__head .h2 { margin-top: var(--s-2); }
+.notebooks__table {
+  display: grid;
+  gap: var(--s-7);
+  margin-top: var(--s-8);
+  padding-block: var(--s-5);
+}
+.nb-card {
+  position: relative;
+  min-width: 0;
+  max-width: 380px;
+  width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 148 / 210; /* A5 */
+  padding: var(--s-7) var(--s-5) var(--s-5) var(--s-7);
+  background-color: #F6F3EC;
+  /* ruled notebook lines + margin rule */
+  background-image:
+    linear-gradient(90deg, transparent 34px, rgb(163 32 27 / .28) 34px, rgb(163 32 27 / .28) 35px, transparent 35px),
+    repeating-linear-gradient(transparent 0 27px, rgb(35 64 142 / .14) 27px 28px);
+  background-position: 0 0, 0 40px;
+  box-shadow: 0 24px 40px -24px rgb(40 30 15 / .45), 0 2px 4px rgb(40 30 15 / .08);
+  transform: rotate(var(--tilt));
+  transition: transform .8s var(--ease);
+}
+.nb-card:hover { transform: rotate(calc(var(--tilt) * .4)) translateY(-4px); }
+.nb-card--a { --tilt: -2.2deg; }
+.nb-card--b { --tilt: 1.6deg; }
+.nb-card--c { --tilt: -1deg; }
+.nb-card--d { --tilt: 2.4deg; }
+.nb-card__date {
+  position: absolute;
+  top: var(--s-4);
+  right: var(--s-5);
+  font-family: var(--f-hand);
+  font-size: 1.375rem;
+  color: var(--blue);
+  opacity: .7;
+}
+.nb-card__lines { margin-top: var(--s-6); font-size: clamp(1.875rem, 1.5rem + 1vw, 2.25rem); line-height: 28px; padding-top: 4px; }
+.nb-card__scribble { width: 72%; margin-top: var(--s-4); }
+.nb-card__moon { width: 44px; margin-left: auto; margin-top: var(--s-2); }
+.nb-card__sig { margin-top: var(--s-5); text-align: right; }
+.nb-card__tick { width: 34px; margin-top: var(--s-5); margin-left: var(--s-2); }
+.nb-card__cap {
+  position: absolute;
+  left: var(--s-7);
+  right: var(--s-5);
+  bottom: var(--s-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-3);
+  font-family: var(--f-mono);
+  font-size: .6875rem;
+  letter-spacing: .06em;
+  color: var(--ink-mute);
+}
+.nb-card__ph { opacity: .8; }
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 22%;
+  width: 92px;
+  height: 26px;
+  background: rgb(232 222 196 / .78);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .08);
+  transform: rotate(-4deg);
+  clip-path: polygon(3% 0, 97% 4%, 100% 50%, 96% 100%, 2% 96%, 0 50%);
+}
+.tape--right { left: auto; right: 18%; transform: rotate(5deg); }
+@media (max-width: 639px) {
+  .nb-card { max-width: 290px; }
+  .nb-card:nth-child(odd) { margin-left: 0; }
+  .nb-card:nth-child(even) { margin-right: 0; margin-top: calc(-1 * var(--s-6)); }
+}
+@media (min-width: 640px) {
+  .notebooks__table { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s-7); row-gap: var(--s-8); }
+  .nb-card--b, .nb-card--d { margin-top: var(--s-9); }
+}
+@media (min-width: 1100px) {
+  .notebooks__table { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--s-6); }
+  .nb-card--b { margin-top: var(--s-9); }
+  .nb-card--c { margin-top: var(--s-5); }
+  .nb-card--d { margin-top: 120px; }
+}
+
+/* ── 8  The book ─────────────────────────────────────────────── */
+.book__grid { display: grid; gap: var(--s-9); align-items: center; }
+.book__stage { perspective: 1600px; padding-block: var(--s-5); }
+.mock {
+  position: relative;
+  width: min(72vw, 360px);
+  margin-inline: auto;
+  aspect-ratio: 5 / 8;
+  transform-style: preserve-3d;
+  transform: rotateY(-16deg) rotateX(3deg);
+  transition: transform 1.4s var(--ease);
+}
+.mock:hover { transform: rotateY(-8deg) rotateX(1.5deg); }
+.mock__front {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #E9E4D9;
+  box-shadow:
+    inset 0 0 60px rgb(120 95 60 / .14),
+    0 0 0 1px rgb(0 0 0 / .05),
+    26px 34px 50px -18px rgb(40 30 15 / .45);
+}
+.mock__front img { width: 100%; height: 100%; object-fit: cover; }
+.mock__spine { /* crease along the spine */
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5%;
+  background: linear-gradient(90deg, rgb(0 0 0 / .18), rgb(255 255 255 / .2) 60%, transparent);
+  pointer-events: none;
+}
+.mock__pages {
+  position: absolute;
+  top: 1%;
+  bottom: 1%;
+  right: -2.4%;
+  width: 2.6%;
+  background: repeating-linear-gradient(90deg, #F1EDE5 0 1px, #D8D2C6 1px 2px);
+  box-shadow: inset -3px 0 4px rgb(0 0 0 / .12);
+}
+.mock__shadow { width: 70%; height: 22px; margin: var(--s-5) auto 0; border-radius: 50%; background: rgb(40 30 15 / .28); filter: blur(16px); }
+
+.cover-art {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 11% 10% 9%;
+  container-type: inline-size;
+  background-image: radial-gradient(120% 80% at 30% 20%, rgb(255 255 255 / .45), transparent 60%), radial-gradient(60% 40% at 80% 90%, rgb(120 95 60 / .08), transparent 70%);
+}
+.cover-art__before { font-family: var(--f-display); font-size: 7.5cqw; letter-spacing: .08em; }
+.cover-art__moon { width: 20cqw; margin: 16cqw 0 0 auto; }
+.cover-art__moon-word { margin-top: auto; font-family: var(--f-display); font-size: 30cqw; line-height: .8; letter-spacing: -.04em; margin-left: -.04em; }
+.cover-art__author { margin-top: 7cqw; font-family: var(--f-serif); font-size: 4.4cqw; letter-spacing: .3em; text-transform: uppercase; }
+.cover-art__scratch { position: absolute; left: 8%; right: 18%; top: 56%; width: 74%; height: 5cqw; transform: rotate(-3deg); }
+
+.book__text { display: grid; gap: var(--s-5); }
+.book__text .h2 { margin-top: var(--s-2); }
+.spec { margin-top: var(--s-4); max-width: 26rem; border-top: 1px solid var(--rule); }
+.spec div { display: flex; justify-content: space-between; gap: var(--s-4); padding-block: var(--s-3); border-bottom: 1px solid var(--rule); }
+.spec dt { font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-mute); padding-top: 3px; }
+.spec__tbd { font-style: italic; color: var(--ink-mute); }
+
+/* ── The book: sales copy + buy (Payhip) ─────────────────────── */
+.sale__open {
+  max-width: 30rem;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.sale__body { display: grid; gap: var(--s-4); max-width: 30rem; margin-top: var(--s-2); color: var(--ink-soft); }
+.sale__last { font-style: italic; color: var(--ink); }
+.buy { display: grid; justify-items: start; gap: var(--s-3); margin-top: var(--s-5); }
+.buy__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); margin-bottom: var(--s-2); }
+.buy__wl { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 900px) {
+  .book__grid { grid-template-columns: 1fr 1fr; }
+  .book__stage { order: 2; }
+}
+
+/* ── 9  Waitlist ─────────────────────────────────────────────── */
+.waitlist { background: var(--ink); color: var(--paper); }
+.waitlist .meta { color: rgb(234 230 222 / .6); }
+.waitlist .lede { color: rgb(234 230 222 / .82); }
+.waitlist .folio { color: rgb(234 230 222 / .5); }
+.waitlist::before { /* grain reads lighter on ink */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: .5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.waitlist__grid { position: relative; display: grid; gap: var(--s-8); }
+.waitlist__title {
+  font-family: var(--f-display);
+  font-size: clamp(2.5rem, 1.4rem + 5vw, 6rem);
+  line-height: .98;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.waitlist__text .lede { margin-top: var(--s-6); }
+.waitlist__get { margin-top: var(--s-7); }
+.ticks { margin-top: var(--s-4); display: grid; gap: var(--s-2); font-size: var(--t-lead); font-style: italic; }
+.ticks li { display: flex; align-items: baseline; gap: var(--s-3); }
+.ticks li::before { content: "✓"; font-family: var(--f-hand); font-style: normal; font-size: 1.5em; line-height: 0; color: #E0786F; transform: rotate(-8deg) translateY(.12em); }
+
+.waitlist__card {
+  align-self: end;
+  padding: clamp(var(--s-5), 4vw, var(--s-7));
+  background: var(--paper);
+  color: var(--ink);
+}
+.wl { display: grid; gap: var(--s-5); }
+.wl__field label { display: block; font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); }
+.wl__opt { margin-left: var(--s-2); text-transform: none; letter-spacing: 0; font-family: var(--f-serif); font-style: italic; font-size: var(--t-small); }
+.wl__field input {
+  display: block;
+  width: 100%;
+  margin-top: var(--s-2);
+  padding: var(--s-3) 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--f-serif);
+  font-size: 1.375rem; /* ≥16px avoids iOS zoom */
+  transition: border-color .3s;
+}
+.wl__field input:focus { outline: none; border-bottom: 2px solid var(--blue); padding-bottom: 11px; }
+.wl__field input[aria-invalid="true"] { border-bottom-color: var(--red); }
+.wl__captcha { min-height: 78px; }
+@media (max-width: 380px) { .wl__captcha > div { transform: scale(.86); transform-origin: 0 0; } .wl__captcha { min-height: 68px; } }
+.wl__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.wl__consent { display: flex; gap: var(--s-3); align-items: flex-start; font-size: var(--t-small); line-height: 1.5; color: var(--ink-soft); cursor: pointer; }
+.wl__consent input {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin: 1px 0 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1.4px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.wl__consent input:checked { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M4 11.5l4.5 4.5L18.5 5' fill='none' stroke='%23A3201B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+.wl__consent input[aria-invalid="true"] { border-color: var(--red); }
+.wl__msg { min-height: 1.5em; font-size: var(--t-small); color: var(--ink-mute); }
+.wl__msg.is-error { color: var(--red); }
+.wl__privacy { font-size: var(--t-small); color: var(--ink-mute); }
+.wl__privacy summary { cursor: pointer; font-family: var(--f-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; min-height: 32px; display: flex; align-items: center; }
+.wl__privacy p { margin-top: var(--s-2); line-height: 1.55; }
+
+.wl-done { padding-block: var(--s-7); outline: none; }
+.wl-done__line { font-family: var(--f-serif); font-style: italic; font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem); line-height: 1.15; }
+.wl-done__sub { margin-top: var(--s-6); font-family: var(--f-mono); font-size: .75rem; letter-spacing: .06em; color: var(--ink-mute); }
+.wl-done__sub:empty { display: none; }
+
+@media (min-width: 900px) {
+  .waitlist__grid { grid-template-columns: 7fr 5fr; column-gap: var(--s-9); }
+}
+
+/* ── 9  To the person holding this book ──────────────────────── */
+.reader { padding-block: var(--section-y) calc(var(--section-y) + var(--s-7)); }
+.reader__title { text-align: center; }
+.reader__body { margin-top: var(--s-8); display: grid; gap: 1.1em; font-size: var(--t-lead); line-height: 1.5; }
+.reader__quote { padding-left: var(--s-5); font-style: italic; }
+.reader__thanks { font-family: var(--f-hand); font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); line-height: 1; color: var(--blue); transform: rotate(-2deg); }
+
+/* ── 9  Final page — almost everything disappears ────────────── */
+.final {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140vh;
+  padding: 60vh var(--gutter) var(--s-7);
+  text-align: center;
+}
+.final__text { display: grid; gap: var(--s-4); font-family: var(--f-serif); font-size: var(--t-lead); }
+.final__last { margin-top: var(--s-5); font-style: italic; font-size: var(--t-quote); }
+.final__colophon { display: grid; justify-items: center; gap: var(--s-1); margin-top: 40vh; font-family: var(--f-mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); }
+.final__back { margin-top: var(--s-5); min-height: 44px; display: inline-flex; align-items: center; color: var(--ink); }
+.final__copy { margin-top: var(--s-6); text-transform: none; letter-spacing: .02em; }
+
+/* ── 10  Motion ──────────────────────────────────────────────── */
+/* Reveal hides content only when JS runs — without JS, everything is visible. */
+.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--slow) var(--ease), transform var(--slow) var(--ease); transition-delay: var(--d, 0ms); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+.draw { stroke-dashoffset: 0; }
+
+/* waitlist success: words appear like ink soaking in */
+.ink-in { display: inline-block; animation: ink 2.2s var(--ease) both; }
+.ink-in--late { animation-delay: 1s; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ink {
+  0%   { opacity: 0; filter: blur(8px); letter-spacing: .04em; }
+  60%  { opacity: .85; filter: blur(1px); }
+  100% { opacity: 1; filter: blur(0); letter-spacing: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+  .moon-drawing { transform: none !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   OPEN THE BOOK — interactive preview with page turns
+   Desktop: two-page spread. Phone: one page at a time.
+   Without JS: the free poems are shown as plain text (.fb-library).
+   ═══════════════════════════════════════════════════════════════ */
+.openbook__head { display: grid; gap: var(--s-4); }
+.openbook__head .h2 { margin-top: var(--s-2); }
+.openbook__head .lede { font-style: italic; }
+
+.fb { width: 100%; max-width: 940px; margin: var(--s-8) auto 0; perspective: 2400px; }
+.no-js .fb, .no-js .fb-controls { display: none; }
+
+/* free poems as plain text (no JS) — hidden once the book is built */
+.fb-library { display: grid; gap: var(--s-8); max-width: 36rem; margin: var(--s-8) auto 0; }
+.fb-library h3 { font-family: var(--f-display); font-size: var(--t-h2); line-height: 1; }
+.fb-library pre { margin: var(--s-5) 0 0; font-family: var(--f-serif); font-size: var(--t-body); line-height: 1.65; white-space: pre-wrap; }
+.js .fb-library { display: none; }
+
+/* ── one page ──────────────────────────────────────────────────── */
+.fb-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 11% 10% 8%;          /* % of the page width (cqw can't size a container's own padding) */
+  background: var(--paper-light);
+  color: var(--ink);
+  container-type: inline-size;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 1px 0 rgb(0 0 0 / .04), 0 24px 44px -26px rgb(40 30 15 / .45);
+}
+.fb-face--cover { padding: 0; background: #E9E4D9; }
+.fb-face--back { background: #E9E4D9; }
+.fb-face--center { justify-content: center; align-items: center; text-align: center; }
+
+/* small type used across pages */
+.fb-meta { font-family: var(--f-mono); font-size: clamp(.5625rem, 2.5cqw, .75rem); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); }
+.fb-note { margin-block: 3cqw; max-width: 84%; font-family: var(--f-serif); font-style: italic; font-size: clamp(.9375rem, 4.6cqw, 1.3125rem); line-height: 1.4; }
+
+/* contents page */
+.fb-contents__title { margin-top: 2cqw; font-family: var(--f-display); font-size: clamp(1.375rem, 8cqw, 2.25rem); line-height: 1; }
+.fb-toc { margin-top: 8cqw; border-top: 1px solid var(--rule); }
+.fb-toc button {
+  display: flex;
+  align-items: baseline;
+  gap: 4cqw;
+  width: 100%;
+  min-height: 44px;
+  padding: 3.4cqw 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  font-family: var(--f-serif);
+  font-size: clamp(1rem, 5cqw, 1.375rem);
+  transition: color .3s, padding .5s var(--ease);
+}
+.fb-toc button:hover { padding-left: 1.5cqw; }
+.fb-toc .num { flex-shrink: 0; width: 9cqw; font-family: var(--f-mono); font-size: clamp(.625rem, 2.6cqw, .75rem); color: var(--ink-mute); }
+.fb-toc .tick { margin-left: auto; font-family: var(--f-hand); font-size: 1.4em; line-height: 0; color: var(--red); }
+.fb-contents__foot { margin-top: auto; padding-top: 4cqw; font-family: var(--f-serif); font-style: italic; font-size: clamp(.8125rem, 3.4cqw, 1rem); color: var(--ink-mute); }
+
+/* poem pages */
+.fb-poemhead { flex-shrink: 0; }
+.fb-poemhead .fb-title { margin-top: 2.5cqw; font-family: var(--f-display); font-size: clamp(1.375rem, 8cqw, 2.375rem); line-height: 1.02; }
+.fb-poemhead .fb-by { margin-top: 2.5cqw; }
+.fb-running { flex-shrink: 0; font-family: var(--f-serif); font-style: italic; font-size: clamp(.75rem, 3.2cqw, .9375rem); color: var(--ink-mute); }
+.fb-verse {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  margin: 7cqw 0 0;
+  font-family: var(--f-serif);
+  font-size: clamp(.875rem, 4.15cqw, 1.1875rem);
+  line-height: 1.6;
+  white-space: pre-wrap;        /* keeps every line break and space exactly */
+  overflow-wrap: break-word;
+  color: var(--ink);
+}
+.fb-foot { flex-shrink: 0; display: flex; justify-content: space-between; gap: 4cqw; padding-top: 4cqw; font-family: var(--f-mono); font-size: clamp(.5rem, 2.2cqw, .6875rem); letter-spacing: .1em; color: var(--ink-mute); }
+
+/* end-of-poem page */
+.fb-end__big { font-family: var(--f-display); font-size: clamp(1.375rem, 8.4cqw, 2.375rem); line-height: 1.05; }
+.fb-end__line { margin-top: 5cqw; font-family: var(--f-hand); font-size: clamp(1.5rem, 8cqw, 2.375rem); line-height: 1; color: var(--red); transform: rotate(-2deg); }
+.fb-end .btn-ink { margin-top: 7cqw; min-height: 46px; padding-inline: 5cqw; font-size: clamp(.625rem, 2.7cqw, .8125rem); }
+.fb-end__more { margin-top: 7cqw; display: grid; gap: 1cqw; justify-items: center; }
+.fb-end__more button { min-height: 40px; font-family: var(--f-serif); font-style: italic; font-size: clamp(.9375rem, 4.2cqw, 1.1875rem); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+.fb-end__more button:hover { text-decoration-color: var(--ink); }
+.fb-end__cover { margin-top: 4cqw; min-height: 40px; font-family: var(--f-mono); font-size: clamp(.5625rem, 2.5cqw, .75rem); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-mute); }
+.fb-end__cover:hover { color: var(--ink); }
+
+.fb-backline { max-width: 82%; margin-bottom: 8cqw; font-family: var(--f-serif); font-style: italic; font-size: clamp(1.0625rem, 5.4cqw, 1.625rem); line-height: 1.35; }
+
+/* ── the book (JS) ─────────────────────────────────────────────── */
+.fb-book {
+  position: relative;
+  aspect-ratio: 4 / 3;                    /* two 2:3 pages side by side */
+  transition: transform 1s var(--ease), opacity .35s ease;
+}
+.fb-book.is-front { transform: translateX(-25%); }   /* closed: centre the cover */
+.fb-book.is-back  { transform: translateX(25%); }    /* back cover: centre it */
+.fb-book.is-jumping { opacity: 0; }
+
+.fb-leaf {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: left center;          /* the spine */
+  transition: transform 1s var(--ease);
+}
+.fb-leaf.is-flipped { transform: rotateY(-180deg); }
+.fb-leaf .fb-side--back { transform: rotateY(180deg); }
+
+/* shading near the spine */
+.fb-leaf .fb-face::before { content: ""; position: absolute; top: 0; bottom: 0; width: 9%; pointer-events: none; z-index: 2; }
+.fb-leaf .fb-side--front::before { left: 0; background: linear-gradient(90deg, rgb(0 0 0 / .13), transparent); }
+.fb-leaf .fb-side--back::before  { right: 0; background: linear-gradient(270deg, rgb(0 0 0 / .13), transparent); }
+.fb-leaf .fb-face--cover::before { width: 4%; }
+
+/* soft shadow sweeping over a page while it turns */
+.fb-leaf .fb-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(0 0 0 / .16), rgb(0 0 0 / .03) 60%, transparent);
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.fb-leaf.is-turning .fb-face::after { opacity: 1; }
+
+/* phone: one page at a time */
+.fb--single { max-width: 420px; }
+.fb--single .fb-book { aspect-ratio: 2 / 3; }
+.fb--single .fb-book.is-front, .fb--single .fb-book.is-back { transform: none; }
+.fb--single .fb-leaf { left: 0; width: 100%; }
+.fb--single .fb-leaf.is-flipped { opacity: 0; transition: transform 1s var(--ease), opacity .3s ease .55s; }
+
+/* hidden page used only to measure how much poem fits on a page */
+.fb-measure { position: absolute; left: -9999px; top: 0; visibility: hidden; pointer-events: none; }
+.fb-measure .fb-face { position: relative; inset: auto; aspect-ratio: 2 / 3; }
+
+.fb-controls { display: flex; align-items: center; justify-content: center; gap: var(--s-4); margin-top: var(--s-6); }
+.fb-status { min-width: 12rem; text-align: center; font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: .08em; color: var(--ink-mute); }
+.pager__arrow:disabled { opacity: .3; cursor: default; }
+
+.openbook__buy { display: grid; justify-items: center; gap: var(--s-3); margin-top: var(--s-7); text-align: center; }
+
+/* fewer animations: no turning motion, pages change instantly */
+@media (prefers-reduced-motion: reduce) {
+  .fb-leaf, .fb-book, .fb--single .fb-leaf.is-flipped { transition: none !important; }
+  .fb-leaf .fb-face::after { display: none; }
+}
+  </style>
+
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "BEFORE ME, MOON",
+    "author": { "@type": "Person", "name": "Mike Ramírez" },
+    "genre": "Poetry",
+    "inLanguage": "en",
+    "bookEdition": "First digital edition",
+    "bookFormat": "https://schema.org/EBook",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://payhip.com/b/4xL3e"
+    },
+    "description": "Before I could name the world, I named the moon."
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared SVG defs: the "pen" filter gives strokes a hand-drawn wobble -->
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="pen" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+      </filter>
+      <filter id="pen-soft" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="9" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Scroll progress: a thin ink line along the top -->
+  <div class="progress" aria-hidden="true"><span class="progress__ink"></span></div>
+
+  <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top">
+        <span class="nav__phase" id="nav-phase" aria-hidden="true"></span>
+        BEFORE ME, MOON
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav__toggle-label">Menu</span>
+      </button>
+
+      <nav class="nav__links" id="nav-links" aria-label="Main">
+        <ul>
+          <li><a class="pen-link" href="#book">Book</a></li>
+          <li><a class="pen-link" href="#pages">Poems</a></li>
+          <li><a class="pen-link" href="#note">About</a></li>
+          <li><a class="pen-link pen-link--red" href="#waitlist">Waitlist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════ 01 — COVER / HERO ═══════════════════════ -->
+    <section class="hero page-sec" id="top" aria-labelledby="hero-title">
+      <div class="hero__fold" aria-hidden="true"></div>
+
+      <div class="hero__meta wrap">
+        <p class="meta">First edition / poetry collection</p>
+        <p class="meta">Out now — digital edition</p>
+      </div>
+
+      <div class="hero__cover wrap">
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__before">Before me,</span>
+          <span class="hero__moon-word">Moon</span>
+        </h1>
+
+        <!-- Hand-drawn moon. It leans very slightly toward the cursor (script.js → initMoon). -->
+        <div class="hero__moon" id="hero-moon" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="moon-drawing">
+            <defs>
+              <clipPath id="moon-shadow"><path d="M100 22a78 78 0 1 0 0 156a58 78 0 0 1 0-156z"/></clipPath>
+            </defs>
+            <g filter="url(#pen)" fill="none" stroke="#111" stroke-linecap="round">
+              <circle cx="100" cy="100" r="78" stroke-width="1.6"/>
+              <path d="M30 108a72 76 0 0 0 128 34" stroke-width=".8" opacity=".55"/>
+              <g clip-path="url(#moon-shadow)" stroke-width=".9" opacity=".7">
+                <path d="M-200 0l200 200 M-191 0l200 200 M-182 0l200 200 M-173 0l200 200 M-164 0l200 200 M-155 0l200 200 M-146 0l200 200 M-137 0l200 200 M-128 0l200 200 M-119 0l200 200 M-110 0l200 200 M-101 0l200 200 M-92 0l200 200 M-83 0l200 200 M-74 0l200 200 M-65 0l200 200 M-56 0l200 200 M-47 0l200 200 M-38 0l200 200 M-29 0l200 200 M-20 0l200 200 M-11 0l200 200 M-2 0l200 200 M7 0l200 200 M16 0l200 200 M25 0l200 200 M34 0l200 200 M43 0l200 200 M52 0l200 200 M61 0l200 200 M70 0l200 200 M79 0l200 200 M88 0l200 200 M97 0l200 200 M106 0l200 200 M115 0l200 200 M124 0l200 200 M133 0l200 200 M142 0l200 200 M151 0l200 200 M160 0l200 200 M169 0l200 200 M178 0l200 200 M187 0l200 200 M196 0l200 200"/>
+              </g>
+              <circle cx="128" cy="78" r="7" stroke-width=".8" opacity=".6"/>
+              <circle cx="116" cy="128" r="4" stroke-width=".8" opacity=".5"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- The one red mark on the cover -->
+        <p class="hero__mark" aria-hidden="true">
+          <svg viewBox="0 0 90 70" class="hero__arrow">
+            <path filter="url(#pen-soft)" d="M84 64C60 58 30 40 10 8M10 8l2 15M10 8l14 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="hand">first word.</span>
+        </p>
+      </div>
+
+      <div class="hero__foot wrap">
+        <div class="hero__byline">
+          <p class="hero__author">Mike Ramírez</p>
+          <p class="hero__tagline">“Before I could name the world, I named the moon.”</p>
+        </div>
+
+        <div class="hero__ctas">
+          <a class="btn-ink" href="#book">Get the ebook</a>
+          <a class="link-quiet pen-link" href="#pages">Read a page</a>
+        </div>
+      </div>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 01</p>
+    </section>
+
+    <!-- ═══════════════════════ 02 — EPIGRAPH ═══════════════════════ -->
+    <section class="epigraph page-sec" aria-label="Epigraph">
+      <svg class="epigraph__flight" viewBox="0 0 600 160" aria-hidden="true">
+        <path class="draw" filter="url(#pen-soft)" d="M8 140C120 120 160 40 260 60s150 70 230 20 70-50 96-62" fill="none" stroke="#111" stroke-width="1" stroke-dasharray="2 7" stroke-linecap="round"/>
+        <!-- a very small line-drawn pigeon at the end of the path -->
+        <g transform="translate(560 6) scale(.9)" filter="url(#pen-soft)" fill="none" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 20c6-2 12-2 18 1 4-6 10-9 16-9-4 3-6 6-7 10 4 1 7 3 9 6-6 0-11-1-16 1-6 2-13 1-20-3z"/>
+          <path d="M20 21c2-6 0-12-6-17 8 2 13 7 14 15"/>
+          <circle cx="33" cy="15" r=".6" fill="#111"/>
+        </g>
+      </svg>
+
+      <blockquote class="epigraph__text wrap-narrow">
+        <p class="reveal">“Do you know how homing pigeons find their way home?”</p>
+        <p class="reveal">“No?”</p>
+        <p class="reveal">“Nobody really knows.</p>
+        <p class="reveal epigraph__last">But they come back anyway.”</p>
+      </blockquote>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 02</p>
+    </section>
+
+    <!-- ═══════════════════════ 03 — PAGES (featured poetry) ═══════════════════════
+         Excerpts are quoted from the working manuscript. Add or change pages by
+         copying an <article class="ms-page"> block. Keep data-no = the poem number. -->
+    <section class="pages page-sec" id="pages" aria-labelledby="pages-title">
+      <div class="wrap pages__head">
+        <p class="meta">From the manuscript</p>
+        <h2 class="h2" id="pages-title">Read a page.</h2>
+        <p class="lede">Lines from nine poems. The rest stay in the book.</p>
+      </div>
+
+      <div class="pages__desk wrap">
+        <div class="stack" id="stack" aria-roledescription="manuscript pages" aria-live="polite">
+
+          <article class="ms-page" data-no="02" aria-label="From poem 02, I Just Wanna Be Pure">
+            <header class="ms-page__head"><span>Poem 02</span><span>I Just Wanna Be Pure</span></header>
+            <p class="ms-page__text">I just wanna be pure.<br><br>Just wanna be pure.</p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— I Just Wanna Be Pure</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>02</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="20" aria-label="From poem 20, Transparent Ink">
+            <header class="ms-page__head"><span>Poem 20</span><span>Transparent Ink</span></header>
+            <p class="ms-page__text">The page knew <mark class="ink-under">before I did.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Transparent Ink</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>20</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="39" aria-label="From poem 39, Do Not Trust">
+            <header class="ms-page__head"><span>Poem 39</span><span>Do Not Trust</span></header>
+            <p class="ms-page__text">My file is always <mark class="ink-under">older than me.</mark><br><br>I grew out of the evidence,<br>they kept the photograph.</p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Do Not Trust</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>39</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="49" aria-label="From poem 49, Wrong Key">
+            <header class="ms-page__head"><span>Poem 49</span><span>Wrong Key</span></header>
+            <p class="ms-page__text">The ceiling has seen more of me this month<br>than <mark class="ink-under">the sky.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Wrong Key</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>49</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="42" aria-label="From poem 42, Key">
+            <header class="ms-page__head"><span>Poem 42</span><span>Key</span></header>
+            <p class="ms-page__text">Strange how quickly an old room<br><mark class="ink-under">remembers your body.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Key</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>42</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="40" aria-label="From poem 40, Chaos diamonds">
+            <header class="ms-page__head"><span>Poem 40</span><span>Chaos diamonds</span></header>
+            <p class="ms-page__text">I learned to make beautiful things<br>out of chaos. That doesn’t mean the<br><mark class="ink-under">chaos was beautiful.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Chaos diamonds</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>40</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="38" aria-label="From poem 38, Pocket Note Book">
+            <header class="ms-page__head"><span>Poem 38</span><span>Pocket Note Book</span></header>
+            <p class="ms-page__text">I knew a boy who keeps <mark class="ink-under">the moon</mark><br>in his pocket.</p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Pocket Note Book</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>38</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="21" aria-label="From poem 21, Speaking Paper">
+            <header class="ms-page__head"><span>Poem 21</span><span>Speaking Paper</span></header>
+            <p class="ms-page__text">They stapled versions of me together<br>and called it complete. Paper doesn’t<br>know <mark class="ink-under">how loud a person could be.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Speaking Paper</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>21</span></footer>
+          </article>
+
+          <article class="ms-page" data-no="34" aria-label="From poem 34, Left Behind Freedom">
+            <header class="ms-page__head"><span>Poem 34</span><span>Left Behind Freedom</span></header>
+            <p class="ms-page__text">I walked until <mark class="ink-under">the street forgot my name.</mark></p>
+            <p class="ms-page__note hand hand--blue" aria-hidden="true">— Left Behind Freedom</p>
+            <footer class="ms-page__folio"><span>BEFORE ME, MOON</span><span>34</span></footer>
+          </article>
+
+        </div>
+
+        <!-- Page controls (built for JS; hidden without it, where all pages simply list) -->
+        <div class="pager" id="pager" hidden>
+          <button class="pager__arrow" type="button" id="pager-prev" aria-label="Previous page">←</button>
+          <ol class="pager__nums" id="pager-nums" aria-label="Choose a page"></ol>
+          <button class="pager__arrow" type="button" id="pager-next" aria-label="Next page">→</button>
+        </div>
+      </div>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 03</p>
+    </section>
+
+    <!-- ═══════════════════════ 04 — BACK COVER COPY ═══════════════════════ -->
+    <section class="blurb page-sec" aria-labelledby="blurb-title">
+      <div class="wrap blurb__grid">
+        <h2 class="blurb__open" id="blurb-title">
+          <span class="reveal">Some people inherit a home.</span>
+          <span class="reveal">Others spend their whole lives trying to remember the way back.</span>
+        </h2>
+
+        <div class="blurb__body">
+          <p class="reveal"><span class="smallcaps">Before Me, Moon</span> moves through hospital rooms, empty streets, addiction, childhood, love, memory, freedom and the strange places a mind can go when nobody else is awake.</p>
+          <p class="reveal">Written from notebooks rather than explanations, these poems do not ask to be understood perfectly.</p>
+          <p class="reveal blurb__turn">They ask to be entered.</p>
+          <ul class="blurb__list">
+            <li class="reveal">There are doors that keep moving.</li>
+            <li class="reveal">Rooms that remember bodies.</li>
+            <li class="reveal">Files that remember older versions of people.</li>
+          </ul>
+          <p class="reveal">And somewhere above all of it, the moon keeps watching without asking for proof.</p>
+          <p class="reveal">This is not a book about having survived everything.</p>
+        </div>
+      </div>
+
+      <p class="blurb__close wrap reveal">
+        It is about <span class="blurb__strong">still being here when the page turns.</span>
+      </p>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 04</p>
+    </section>
+
+    <!-- ═══════════════════════ 05 — A NOTE BEFORE YOU READ ═══════════════════════ -->
+    <section class="note page-sec" id="note" aria-labelledby="note-title">
+      <article class="book-page">
+        <h2 class="book-page__title" id="note-title">A Note Before You Read</h2>
+        <div class="book-page__body">
+          <p>I didn’t write these poems to explain myself.</p>
+          <p>Most of them were written before I fully understood what they meant. Some are memories. Some are things that happened. Some are distortions, daydreams, fears, places, people, or feelings I could only understand after putting them on paper.</p>
+          <p>Not every line is literal.</p>
+          <p>Not every metaphor belongs to only one thing.</p>
+          <p>The moon keeps returning because some things can witness you without interrupting you.</p>
+          <p>I don’t believe a poem has one correct meaning. I know what some of these words mean to me, but once you read them, they might start meaning something completely different to you.</p>
+          <p>That doesn’t make either of us wrong.</p>
+          <p class="book-page__last">Sometimes the page knows before the writer does.</p>
+          <p class="book-page__sign">— Mike Ramírez</p>
+        </div>
+      </article>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 05</p>
+    </section>
+
+    <!-- ═══════════════════════ INTERLUDE — one line, large ═══════════════════════ -->
+    <section class="interlude" aria-label="From poem 33, Efface">
+      <p class="interlude__line reveal">Time tried to efface me<br>but <span class="circle-red">forgot the corners.</span></p>
+      <p class="meta interlude__src reveal">Poem 33 — Efface</p>
+    </section>
+
+    <!-- ═══════════════════════ 06 — MANUSCRIPT / NOTEBOOKS ═══════════════════════ -->
+    <section class="notebooks page-sec" aria-labelledby="notebooks-title">
+      <div class="wrap notebooks__head">
+        <p class="meta">Where it started</p>
+        <h2 class="h2" id="notebooks-title">Written by hand first.</h2>
+        <p class="lede">Every poem began in an A5 notebook, signed M.R., with a date and a time.</p>
+      </div>
+
+      <div class="wrap notebooks__table">
+        <!-- ┌────────────────────────────────────────────────────────────┐
+             │ PLACEHOLDER NOTEBOOK CARDS                                 │
+             │ Replace each .nb-card's inner content with a real scan:    │
+             │   <img src="scans/page-01.jpg" alt="Handwritten page of    │
+             │        the poem ‘…’" loading="lazy">                        │
+             │ Keep the .nb-card wrapper so the tilt + tape stay.         │
+             └────────────────────────────────────────────────────────────┘ -->
+        <figure class="nb-card nb-card--a reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="nb-card__date">— . — . — &nbsp;·&nbsp; — : —</span>
+          <p class="nb-card__lines hand hand--blue">I wish I wrote<br>the way I thought;</p>
+          <svg class="nb-card__scribble" viewBox="0 0 220 30" aria-hidden="true"><path filter="url(#pen-soft)" d="M4 16c18-10 30 8 46-2s28 10 44 0 30 8 46-2 28 8 46-2 22 6 30 0" fill="none" stroke="#23408E" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <figcaption class="nb-card__cap">Poem 31 — Written Manuscript <span class="nb-card__ph">placeholder · scan coming</span></figcaption>
+        </figure>
+
+        <figure class="nb-card nb-card--b reveal">
+          <span class="tape tape--right" aria-hidden="true"></span>
+          <span class="nb-card__date">— . — . — &nbsp;·&nbsp; — : —</span>
+          <svg class="nb-card__moon" viewBox="0 0 60 60" aria-hidden="true"><path filter="url(#pen-soft)" d="M38 8a24 24 0 1 0 16 36A20 20 0 1 1 38 8z" fill="none" stroke="#23408E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <p class="nb-card__lines hand hand--blue">Not the moon.<br>But it knows.</p>
+          <p class="nb-card__sig hand hand--blue">— M.R</p>
+          <figcaption class="nb-card__cap">Poem 22 — Prisions Butter Fly <span class="nb-card__ph">placeholder · scan coming</span></figcaption>
+        </figure>
+
+        <figure class="nb-card nb-card--c reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="nb-card__date">— . — . — &nbsp;·&nbsp; — : —</span>
+          <p class="nb-card__lines hand hand--blue">The only home I know is the space between the letters I write daily.</p>
+          <figcaption class="nb-card__cap">Poem 27 — Black Point <span class="nb-card__ph">placeholder · scan coming</span></figcaption>
+        </figure>
+
+        <figure class="nb-card nb-card--d reveal">
+          <span class="tape tape--right" aria-hidden="true"></span>
+          <span class="nb-card__date">— . — . — &nbsp;·&nbsp; — : —</span>
+          <p class="nb-card__lines hand hand--blue">But the sentences<br>continue.</p>
+          <svg class="nb-card__tick" viewBox="0 0 40 30" aria-hidden="true"><path filter="url(#pen-soft)" d="M4 16l10 9L36 4" fill="none" stroke="#A3201B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <figcaption class="nb-card__cap">Poem 09 — Borrowed Electricity <span class="nb-card__ph">placeholder · scan coming</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 06</p>
+    </section>
+
+    <!-- ═══════════════════════ 07 — OPEN THE BOOK (interactive preview) ═══════════════════════
+         A small book people can open and leaf through. They pick one of the
+         free poems from the contents page; the poem is laid out over as many
+         pages as it needs (automatically, on every screen size).
+         Without JavaScript the free poems are simply shown as text. -->
+    <section class="openbook page-sec" id="open-book" aria-labelledby="openbook-title">
+      <div class="wrap openbook__head">
+        <p class="meta">Free to read</p>
+        <h2 class="h2" id="openbook-title">Open the book.</h2>
+        <p class="lede">Some words are meant to be read slowly.</p>
+      </div>
+
+      <div class="wrap">
+        <!-- The book itself is built by the script from the poems below -->
+        <div class="fb" id="fb">
+          <div class="fb-book" id="fb-book" aria-roledescription="book" aria-label="Preview of BEFORE ME, MOON"></div>
+        </div>
+
+        <div class="fb-controls" id="fb-controls" hidden>
+          <button class="pager__arrow" type="button" id="fb-prev" aria-label="Previous page">←</button>
+          <p class="fb-status" id="fb-status" aria-live="polite"></p>
+          <button class="pager__arrow" type="button" id="fb-next" aria-label="Next page">→</button>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════════╗
+             ║  THE FREE PREVIEW POEMS — change them here                       ║
+             ║                                                                  ║
+             ║  One <article> per poem, in the order they appear on the         ║
+             ║  contents page.                                                  ║
+             ║  • data-number = poem number in the book (e.g. 033)              ║
+             ║  • data-title  = the title                                       ║
+             ║  • Paste the poem EXACTLY between <pre> and </pre>.              ║
+             ║    Start right after <pre> — every line break and space is       ║
+             ║    kept exactly as typed. Write < as &lt; and & as &amp;         ║
+             ║  • A poem with an empty <pre></pre> is skipped automatically.    ║
+             ║  • Page breaks happen by themselves, at stanza breaks if         ║
+             ║    possible.                                                     ║
+             ╚══════════════════════════════════════════════════════════════════╝ -->
+        <div class="fb-library" id="fb-library">
+
+          <article class="fb-poem" data-number="033" data-title="Efface">
+            <h3>Efface</h3>
+<pre>The streets turned cimmerian before
+I was ready to go home.
+
+Vesper settled over the rooftop before
+anyone noticed. The rain felt lustral but
+nothing in me came clean.
+
+I was walking in the park and kept
+meeting an epidolon of myself in old
+pictures I see in my head. I wanted
+something amaranthine in a life built to
+disappear.
+
+My thoughts took an anfractuous route
+back to the same wound that isn’t healed
+yet. I keep searching for the quiddity of
+home in rooms I am leaving. The morning felt
+ineluctable, even when I wanted the nights to
+stay. Your name still touches cadence my
+mouth remembers. Time tried to efface me
+but forgot the corners.
+
+— M.R</pre>
+          </article>
+
+          <!-- Poem 073 — paste the exact text from the First Digital Edition between <pre> and </pre> -->
+          <article class="fb-poem" data-number="073" data-title="Verdict Name">
+            <h3>Verdict Name</h3>
+<pre></pre>
+          </article>
+
+          <article class="fb-poem" data-number="002" data-title="I Just Wanna Be Pure">
+            <h3>I Just Wanna Be Pure</h3>
+<pre>Little kids shoot marbles
+where benches break the sun
+into graceful shafts of light.
+
+I just wanna be pure.
+
+Just wanna be pure.</pre>
+          </article>
+
+        </div>
+
+        <!-- Front cover of the mini book (same artwork as the Book section) -->
+        <template id="fb-cover-tpl">
+          <div class="cover-art" role="img" aria-label="Cover: BEFORE ME, MOON by Mike Ramírez">
+            <span class="cover-art__before">BEFORE ME,</span>
+            <svg class="cover-art__moon" viewBox="0 0 60 60" aria-hidden="true">
+              <g filter="url(#pen-soft)" fill="none" stroke="#111" stroke-width="1.1" stroke-linecap="round">
+                <circle cx="30" cy="30" r="22"/>
+                <path d="M18 14c-6 8-7 22 1 31M23 11c-7 9-8 25 1 37" opacity=".6"/>
+              </g>
+            </svg>
+            <span class="cover-art__moon-word">MOON</span>
+            <span class="cover-art__author">Mike Ramírez</span>
+            <svg class="cover-art__scratch" viewBox="0 0 200 20" aria-hidden="true" preserveAspectRatio="none"><path filter="url(#pen-soft)" d="M2 12C50 6 120 16 198 7" fill="none" stroke="#A3201B" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+        </template>
+
+        <!-- BUY (Payhip — same checkout and price as the Book section) -->
+        <div class="openbook__buy">
+          <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Continue reading — €9.99</a>
+          <p class="small">75 original poems. PDF + EPUB. Instant digital access.</p>
+        </div>
+      </div>
+
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 07</p>
+    </section>
+
+    <!-- ═══════════════════════ 08 — THE BOOK ═══════════════════════ -->
+    <section class="book page-sec" id="book" aria-labelledby="book-title">
+      <div class="wrap book__grid">
+        <div class="book__stage">
+          <!-- CSS book mockup.
+               When the final cover exists: put <img src="cover.jpg" alt="Cover of BEFORE ME, MOON">
+               inside .mock__front (replacing .cover-art) — the depth and shadow stay. -->
+          <div class="mock" id="mock">
+            <div class="mock__pages" aria-hidden="true"></div>
+            <div class="mock__front">
+              <div class="cover-art" role="img" aria-label="Cover: BEFORE ME, MOON by Mike Ramírez, with a small hand-drawn moon">
+                <span class="cover-art__before">BEFORE ME,</span>
+                <svg class="cover-art__moon" viewBox="0 0 60 60" aria-hidden="true">
+                  <g filter="url(#pen-soft)" fill="none" stroke="#111" stroke-width="1.1" stroke-linecap="round">
+                    <circle cx="30" cy="30" r="22"/>
+                    <path d="M18 14c-6 8-7 22 1 31M23 11c-7 9-8 25 1 37" opacity=".6"/>
+                  </g>
+                </svg>
+                <span class="cover-art__moon-word">MOON</span>
+                <span class="cover-art__author">Mike Ramírez</span>
+                <svg class="cover-art__scratch" viewBox="0 0 200 20" aria-hidden="true" preserveAspectRatio="none"><path filter="url(#pen-soft)" d="M2 12C50 6 120 16 198 7" fill="none" stroke="#A3201B" stroke-width="1.4" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+            <div class="mock__spine" aria-hidden="true"></div>
+          </div>
+          <div class="mock__shadow" aria-hidden="true"></div>
+        </div>
+
+        <div class="book__text">
+          <p class="meta">The book — out now</p>
+          <h2 class="h2" id="book-title">Some books tell you a story.</h2>
+          <p class="sale__open">Others give words to the things you never knew how to explain.</p>
+
+          <div class="sale__body">
+            <p><span class="smallcaps">Before Me, Moon</span> is a collection of 75 original poems in English, each one first written by hand in a notebook.</p>
+            <p>Memory, identity, love, loss and freedom — set down personally, unfiltered, and sometimes uncomfortably close.</p>
+            <p>There is no single correct way to read them. A line may come to mean something to you that it never meant to the person who wrote it.</p>
+            <p class="sale__last">An independent collection. No chapters. Just the pages.</p>
+          </div>
+
+          <dl class="spec">
+            <div><dt>Edition</dt><dd>First digital edition</dd></div>
+            <div><dt>Format</dt><dd>Ebook — PDF + EPUB</dd></div>
+            <div><dt>Poems</dt><dd>75 original poems</dd></div>
+            <div><dt>Language</dt><dd>English</dd></div>
+            <div><dt>Paperback</dt><dd class="spec__tbd">Coming later</dd></div>
+          </dl>
+
+          <!-- ═══════════ BUY THE EBOOK (Payhip) ═══════════
+               The button goes straight to Payhip checkout.
+               Product page: https://payhip.com/b/4xL3e
+               Price: €9.99 — if it ever changes, change it in Payhip AND here. -->
+          <div class="buy">
+            <div class="buy__actions">
+              <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Buy the ebook · €9.99</a>
+              <a class="link-quiet pen-link" href="#pages">Read a fragment first</a>
+            </div>
+            <p class="small">Secure checkout via Payhip. PDF + EPUB, instant download.</p>
+            <p class="small">Waiting for the paperback? <a class="buy__wl" href="#waitlist">Join the waitlist.</a></p>
+          </div>
+        </div>
+      </div>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 08</p>
+    </section>
+
+    <!-- ═══════════════════════ 09 — WAITLIST ═══════════════════════ -->
+    <section class="waitlist page-sec" id="waitlist" aria-labelledby="waitlist-title">
+      <div class="wrap waitlist__grid">
+        <div class="waitlist__text">
+          <h2 class="waitlist__title" id="waitlist-title">Be there before the first page turns.</h2>
+          <p class="lede">The ebook is out. Join the list to hear first when the physical edition of <span class="smallcaps">Before Me, Moon</span> is ready.</p>
+          <p class="meta waitlist__get">Get notified about</p>
+          <ul class="ticks">
+            <li>the physical edition</li>
+            <li>pre-orders</li>
+            <li>release updates</li>
+          </ul>
+        </div>
+
+        <div class="waitlist__card">
+          <!-- WAITLIST FORM
+               Where it sends to is set at the top of script.js (WAITLIST_CONFIG).
+               Default is "demo": saves in this browser only, and says so. -->
+          <form class="wl" id="wl-form" novalidate>
+            <div class="wl__field">
+              <label for="wl-name">Name <span class="wl__opt">optional</span></label>
+              <input id="wl-name" name="name" type="text" autocomplete="given-name" maxlength="80">
+            </div>
+            <div class="wl__field">
+              <label for="wl-email">Email</label>
+              <input id="wl-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="wl-msg" maxlength="254">
+            </div>
+
+            <!-- Honeypot: invisible to people, filled in by bots -->
+            <div class="wl__hp" aria-hidden="true">
+              <label for="wl-website">Website</label>
+              <input id="wl-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <label class="wl__consent">
+              <input type="checkbox" id="wl-consent" name="consent" required>
+              <span>Email me about this book. Nothing else, unsubscribe anytime.</span>
+            </label>
+
+            <!-- reCAPTCHA appears here when the MailerLite form requires it (see script.js) -->
+            <div class="wl__captcha" id="wl-captcha" hidden></div>
+
+            <button class="btn-ink btn-ink--full" type="submit" id="wl-submit">Join the waitlist</button>
+            <p class="wl__msg" id="wl-msg" role="status" aria-live="polite"></p>
+
+            <details class="wl__privacy">
+              <summary>How your email is used</summary>
+              <p>Your email (and name, if you give it) is used only to tell you about <em>Before Me, Moon</em>: the physical edition, pre-orders and release updates. It’s never sold or shared. The list is kept by MailerLite (EU). To keep bots out, the form uses Google reCAPTCHA, which loads only when you start filling it in. Every email has an unsubscribe link. To have your details deleted, reply to any email.</p>
+            </details>
+          </form>
+
+          <!-- Success state: shown after a confirmed signup -->
+          <div class="wl-done" id="wl-done" hidden tabindex="-1">
+            <p class="wl-done__line"><span class="ink-in">You found the way back.</span></p>
+            <p class="wl-done__line"><span class="ink-in ink-in--late">You’re on the list.</span></p>
+            <p class="wl-done__sub" id="wl-done-sub"></p>
+          </div>
+        </div>
+      </div>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 09</p>
+    </section>
+
+    <!-- ═══════════════════════ 10 — TO THE PERSON HOLDING THIS BOOK ═══════════════════════ -->
+    <section class="reader page-sec" aria-labelledby="reader-title">
+      <div class="wrap-narrow">
+        <h2 class="meta reader__title" id="reader-title">To the person holding this book</h2>
+        <div class="reader__body">
+          <p class="reveal">Someone once told me I shouldn’t put all of my poems online.</p>
+          <p class="reveal reader__quote">“That’s too good to read for free.”</p>
+          <p class="reveal">I laughed, but I kept the sentence.</p>
+          <p class="reveal">So if you bought this book, borrowed it, shared a page with someone, waited for it, supported it, or simply made it this far:</p>
+          <p class="reveal reader__thanks">thank you.</p>
+          <p class="reveal">A book only needs one person to write it.</p>
+          <p class="reveal">But it needs someone else to become real.</p>
+        </div>
+      </div>
+      <p class="folio" aria-hidden="true">BEFORE ME, MOON / 10</p>
+    </section>
+
+    <!-- ═══════════════════════ 11 — FINAL PAGE ═══════════════════════ -->
+    <section class="final" aria-label="Final page">
+      <div class="final__text">
+        <p class="reveal">I thought this was the last page.</p>
+        <p class="reveal">Then the moon came back.</p>
+        <p class="reveal final__last">So did I.</p>
+      </div>
+
+      <div class="final__colophon">
+        <p>BEFORE ME, MOON</p>
+        <p>Mike Ramírez</p>
+        <a class="final__back pen-link" href="#top">Back to the beginning ↑</a>
+        <p class="final__copy">© 2026 Mike Ramírez. All poems reserved.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ALL SCRIPTS (was script.js): waitlist (MailerLite), pages, moon, menu, book preview -->
+  <script>
+/* ═══════════════════════════════════════════════════════════════
+   BEFORE ME, MOON — script.js
+   Everything here is progressive: without JavaScript the page still
+   reads top to bottom, all poems visible, the form simply inactive.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   WAITLIST — connect a real list here
+   ─────────────────────────────────────────────────────────────
+   provider:
+     "demo"       Saves in this browser only (localStorage) and says so
+                  on screen. For testing the design. Collects nothing.
+     "mailerlite" RECOMMENDED. Free plan: 250 subscribers, EU-based.
+                  Fill in mailerliteAccountId + mailerliteFormId (the two
+                  numbers in your form's HTML code: .../jsonp/ACCOUNT/forms/FORM/subscribe).
+                  The site switches to MailerLite automatically once both
+                  are filled in, and only says "you're on the list" when
+                  MailerLite replies success.
+     "buttondown" Free up to 100 subscribers. Put your username below.
+                  Note: Buttondown doesn't let a static page read its reply,
+                  so the success message asks people to confirm by email.
+     "endpoint"   Your own backend (Supabase edge function, Formspree,
+                  Klaviyo/Mailchimp via a serverless function, Shopify
+                  customer API proxy…). Receives JSON { email, name,
+                  consent, source } and must answer 2xx on success.
+   Never put secret API keys in this file — it's public.
+   ───────────────────────────────────────────────────────────── */
+const WAITLIST_CONFIG = {
+  provider: "mailerlite",
+  mailerliteAccountId: "2792935",
+  mailerliteFormId: "204025812478854513", // "Waitlist" form
+  // Your MailerLite form has reCAPTCHA switched on, so the site shows the
+  // "I'm not a robot" box too. If you switch reCAPTCHA OFF in MailerLite
+  // (form → Settings), set this to false — both must match.
+  mailerliteRecaptcha: true,
+  recaptchaSiteKey: "6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD", // MailerLite's public key, from the form code
+  mailerliteAction: "", // optional: the full action URL instead of the two IDs
+  buttondownUsername: "", // e.g. "beforememoon"
+  endpoint: "", // e.g. "https://xyz.supabase.co/functions/v1/waitlist"
+};
+
+(() => {
+  "use strict";
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ── Moon phase glyph (0 = new, .5 = full) ─────────────────── */
+  function phaseSVG(phase) {
+    const r = 6, c = 7;
+    const p = Math.min(Math.max(phase, 0), 0.5);
+    const rx = (Math.abs(Math.cos(2 * Math.PI * p)) * r).toFixed(2);
+    const sweep = p < 0.25 ? 0 : 1;
+    const lit = p < 0.01 ? "" : p > 0.49
+      ? `<circle cx="${c}" cy="${c}" r="${r}" fill="currentColor"/>`
+      : `<path fill="currentColor" d="M${c} ${c - r}A${r} ${r} 0 0 1 ${c} ${c + r}A${rx} ${r} 0 0 ${sweep} ${c} ${c - r}Z"/>`;
+    return `<svg viewBox="0 0 14 14" width="14" height="14"><circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="currentColor" stroke-width="1"/>${lit}</svg>`;
+  }
+
+  /* ── Nav: sticky state, mobile menu ────────────────────────── */
+  function initNav() {
+    const nav = $("#nav");
+    const toggle = $("#nav-toggle");
+    const label = $(".nav__toggle-label", toggle);
+
+    const setOpen = (open) => {
+      nav.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      label.textContent = open ? "Close" : "Menu";
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+
+    toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+    $$("#nav-links a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ── Scroll: ink progress line + nav moon phase ────────────── */
+  function initScroll() {
+    const nav = $("#nav");
+    const ink = $(".progress__ink");
+    const phaseEl = $("#nav-phase");
+    let lastPhase = -1;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? Math.min(scrollY / max, 1) : 0;
+      ink.style.setProperty("--p", p.toFixed(4));
+      nav.classList.toggle("is-scrolled", scrollY > 24);
+
+      // the moon waxes from new to full as you read through the site
+      const phase = Math.round(p * 0.5 * 16) / 16;
+      if (phase !== lastPhase) {
+        phaseEl.innerHTML = phaseSVG(phase);
+        lastPhase = phase;
+      }
+    };
+
+    addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    addEventListener("resize", update);
+    update();
+  }
+
+  /* ── Hero moon leans toward the cursor — barely ────────────── */
+  function initMoon() {
+    const moon = $(".moon-drawing");
+    if (!moon || reducedMotion || !matchMedia("(pointer: fine)").matches) return;
+    const hero = $(".hero");
+
+    hero.addEventListener("pointermove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      moon.style.setProperty("--mx", `${(x * 10).toFixed(1)}px`);
+      moon.style.setProperty("--my", `${(y * 8).toFixed(1)}px`);
+      moon.style.setProperty("--mr", `${(x * 3).toFixed(2)}deg`);
+    });
+    hero.addEventListener("pointerleave", () => {
+      ["--mx", "--my", "--mr"].forEach((v) => moon.style.removeProperty(v));
+    });
+  }
+
+  /* ── Reveal on scroll ──────────────────────────────────────── */
+  function initReveal() {
+    const items = $$(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-in"));
+      return;
+    }
+    // stagger siblings slightly so lines arrive one after another
+    items.forEach((el) => {
+      const siblings = $$(":scope > .reveal", el.parentElement);
+      const i = siblings.indexOf(el);
+      if (i > 0 && !el.style.getPropertyValue("--d")) el.style.setProperty("--d", `${Math.min(i, 8) * 140}ms`);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add("is-in");
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.1 });
+    items.forEach((el) => io.observe(el));
+  }
+
+  /* ── Manuscript pages: a stack you leaf through ────────────── */
+  function initPages() {
+    const stack = $("#stack");
+    const pages = $$(".ms-page", stack);
+    const pager = $("#pager");
+    const nums = $("#pager-nums");
+    if (!pages.length) return;
+
+    // fixed, slightly imperfect resting angles for the pages underneath
+    const rest = [[-1.8, -6, 4], [2.2, 5, 8], [-0.8, -2, 12], [1.4, 8, 6], [-2.6, -9, 10], [0.6, 3, 14], [-1.2, 6, 3], [2.8, -4, 9], [-0.4, 1, 11]];
+    let current = 0;
+
+    nums.innerHTML = pages
+      .map((p, i) => `<li><button type="button" data-i="${i}" aria-label="Page ${i + 1}: poem number ${p.dataset.no}">${p.dataset.no}</button></li>`)
+      .join("");
+    const numBtns = $$("button", nums);
+    pager.hidden = false;
+
+    function layout() {
+      pages.forEach((p, i) => {
+        const depth = (i - current + pages.length) % pages.length;
+        const [rot, tx, ty] = rest[i % rest.length];
+        const on = depth === 0;
+        p.classList.toggle("is-current", on);
+        p.style.zIndex = String(pages.length - depth);
+        p.style.setProperty("--rot", on ? "0deg" : `${rot}deg`);
+        p.style.setProperty("--tx", on ? "0px" : `${tx}px`);
+        p.style.setProperty("--ty", on ? "0px" : `${ty}px`);
+        p.setAttribute("aria-hidden", on ? "false" : "true");
+        p.inert = !on;
+        if (!on) p.classList.remove("is-noted");
+      });
+      numBtns.forEach((b, i) => b.setAttribute("aria-current", i === current ? "true" : "false"));
+    }
+
+    function go(next) {
+      next = (next + pages.length) % pages.length;
+      if (next === current) return;
+      const leaving = pages[current];
+      if (!reducedMotion) {
+        leaving.classList.add("is-leaving");
+        setTimeout(() => leaving.classList.remove("is-leaving"), 650);
+      }
+      current = next;
+      layout();
+    }
+
+    $("#pager-prev").addEventListener("click", () => go(current - 1));
+    $("#pager-next").addEventListener("click", () => go(current + 1));
+    nums.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-i]");
+      if (b) go(Number(b.dataset.i));
+    });
+
+    // arrow keys while you're in the section
+    $("#pages").addEventListener("keydown", (e) => {
+      if (e.target.matches("input, textarea")) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); go(current + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(current - 1); }
+    });
+
+    // swipe on touch screens; a tap shows the margin note (there's no hover)
+    let startX = null, startY = null;
+    stack.addEventListener("pointerdown", (e) => { startX = e.clientX; startY = e.clientY; });
+    stack.addEventListener("pointerup", (e) => {
+      if (startX === null) return;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(current + (dx < 0 ? 1 : -1));
+      else if (Math.abs(dx) < 8 && e.pointerType !== "mouse") pages[current].classList.toggle("is-noted");
+    });
+
+    layout();
+  }
+
+  /* ── Waitlist ──────────────────────────────────────────────── */
+  function initWaitlist() {
+    const form = $("#wl-form");
+    if (!form) return;
+    const email = $("#wl-email");
+    const name = $("#wl-name");
+    const consent = $("#wl-consent");
+    const honeypot = $("#wl-website");
+    const submit = $("#wl-submit");
+    const msg = $("#wl-msg");
+    const done = $("#wl-done");
+    const doneSub = $("#wl-done-sub");
+    const openedAt = Date.now();
+    const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/;
+    const cfg = { ...WAITLIST_CONFIG };
+    if (cfg.provider === "mailerlite" && !cfg.mailerliteAction && !(cfg.mailerliteAccountId && cfg.mailerliteFormId)) {
+      cfg.provider = "demo"; // not connected yet — stay honest and say so on screen
+    }
+
+    /* reCAPTCHA (only when the MailerLite form requires it).
+       Google's script loads the first time someone touches the form,
+       not on page load — faster, and no Google request for people who just read. */
+    const useCaptcha = cfg.provider === "mailerlite" && cfg.mailerliteRecaptcha && cfg.recaptchaSiteKey;
+    const captchaBox = $("#wl-captcha");
+    let captchaId = null;
+    let captchaLoading = false;
+
+    function loadCaptcha() {
+      if (!useCaptcha || captchaLoading) return;
+      captchaLoading = true;
+      captchaBox.hidden = false;
+      window.bmmCaptchaReady = () => {
+        captchaId = window.grecaptcha.render(captchaBox, { sitekey: cfg.recaptchaSiteKey, theme: "light" });
+      };
+      const s = document.createElement("script");
+      s.src = "https://www.google.com/recaptcha/api.js?onload=bmmCaptchaReady&render=explicit";
+      s.async = true;
+      s.onerror = () => say("Couldn’t load the robot check. Please refresh and try again.", true);
+      document.head.appendChild(s);
+    }
+    if (useCaptcha) {
+      form.addEventListener("focusin", loadCaptcha, { once: true });
+      form.addEventListener("pointerdown", loadCaptcha, { once: true });
+    }
+    const captchaToken = () =>
+      captchaId !== null && window.grecaptcha ? window.grecaptcha.getResponse(captchaId) : "";
+
+    const say = (text, isError = false) => {
+      msg.textContent = text;
+      msg.classList.toggle("is-error", isError);
+    };
+
+    email.addEventListener("input", () => {
+      if (email.getAttribute("aria-invalid") === "true" && EMAIL_RE.test(email.value.trim())) {
+        email.removeAttribute("aria-invalid");
+        say("");
+      }
+    });
+    consent.addEventListener("change", () => consent.removeAttribute("aria-invalid"));
+
+    function showDone(note) {
+      form.hidden = true;
+      done.hidden = false;
+      doneSub.textContent = note || "";
+      done.focus({ preventScroll: true });
+    }
+
+    async function send(data) {
+      switch (cfg.provider) {
+        case "mailerlite": {
+          const action = cfg.mailerliteAction ||
+            (cfg.mailerliteAccountId && cfg.mailerliteFormId
+              ? `https://assets.mailerlite.com/jsonp/${cfg.mailerliteAccountId}/forms/${cfg.mailerliteFormId}/subscribe`
+              : "");
+          if (!action) throw new Error("config");
+          const body = new FormData();
+          body.append("fields[email]", data.email);
+          if (data.name) body.append("fields[name]", data.name);
+          body.append("ml-submit", "1");
+          body.append("anticsrf", "true");
+          if (useCaptcha) body.append("g-recaptcha-response", data.captcha || "");
+          const res = await fetch(action, { method: "POST", body, headers: { Accept: "application/json" } });
+          const json = await res.json().catch(() => ({}));
+          if (!res.ok || json.success !== true) {
+            if (window.console) console.warn("[waitlist] MailerLite said:", res.status, json);
+            throw new Error("rejected");
+          }
+          return "If an email from MailerLite arrives, click the link in it to confirm.";
+        }
+        case "buttondown": {
+          if (!cfg.buttondownUsername) throw new Error("config");
+          const body = new FormData();
+          body.append("email", data.email);
+          body.append("tag", "before-me-moon");
+          if (data.name) body.append("metadata__name", data.name);
+          await fetch(`https://buttondown.com/api/emails/embed-subscribe/${encodeURIComponent(cfg.buttondownUsername)}`, { method: "POST", body, mode: "no-cors" });
+          return "One step left: confirm the email Buttondown just sent you.";
+        }
+        case "endpoint": {
+          if (!cfg.endpoint) throw new Error("config");
+          const res = await fetch(cfg.endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({ ...data, source: "before-me-moon-site" }),
+          });
+          if (!res.ok) throw new Error("rejected");
+          return "";
+        }
+        default: {
+          // DEMO — stored only in this browser. Nothing is sent anywhere.
+          try {
+            const key = "bmm-waitlist-demo";
+            const list = JSON.parse(localStorage.getItem(key) || "[]");
+            if (!list.some((x) => x.email === data.email)) list.push({ ...data, at: new Date().toISOString() });
+            localStorage.setItem(key, JSON.stringify(list));
+          } catch { /* private mode: fine, it's a demo */ }
+          return "Demo mode — saved in this browser only. Connect a real list in script.js before sharing the site.";
+        }
+      }
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const value = email.value.trim();
+
+      if (!EMAIL_RE.test(value)) {
+        email.setAttribute("aria-invalid", "true");
+        say(value ? "That email doesn’t look quite right." : "Your email is the only thing I need.", true);
+        email.focus();
+        return;
+      }
+      if (!consent.checked) {
+        consent.setAttribute("aria-invalid", "true");
+        say("Tick the box so I’m allowed to email you.", true);
+        consent.focus();
+        return;
+      }
+      let captcha = "";
+      if (useCaptcha) {
+        loadCaptcha();
+        captcha = captchaToken();
+        if (!captcha) {
+          say("One last thing: tick “I’m not a robot” above the button.", true);
+          return;
+        }
+      }
+      // bots fill hidden fields and submit instantly — accept quietly, send nothing
+      if (honeypot.value || Date.now() - openedAt < 2000) {
+        showDone("");
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = "Writing it down…";
+      say("");
+      try {
+        const note = await send({ email: value.toLowerCase(), name: name.value.trim(), consent: true, captcha });
+        showDone(note);
+      } catch (err) {
+        say(err.message === "config"
+          ? "The waitlist isn’t connected yet. (Set it up in script.js.)"
+          : "Something went wrong on the way. Please try again in a moment.", true);
+        if (useCaptcha && captchaId !== null) window.grecaptcha.reset(captchaId); // a token works only once
+      } finally {
+        submit.disabled = false;
+        submit.textContent = "Join the waitlist";
+      }
+    });
+  }
+
+  /* ── Back to the beginning — the site loops like the book ──── */
+  /* ── Open the book: page-turn preview with free poems ──────────
+     Reads the poems from #fb-library (HTML), builds the pages
+     (cover → inside cover → contents → chosen poem → end page →
+     back cover) and binds them into leaves that turn on the spine.
+     Desktop: two pages per leaf (a spread). Phone: one page per leaf. */
+  function initFlipbook() {
+    const fb = $("#fb");
+    const book = $("#fb-book");
+    const library = $("#fb-library");
+    if (!fb || !book || !library) return;
+
+    const poems = $$(".fb-poem", library)
+      .map((a) => ({
+        number: a.dataset.number || "",
+        title: a.dataset.title || "",
+        text: (a.querySelector("pre")?.textContent || "").replace(/\s+$/, ""),
+      }))
+      .filter((p) => p.text.trim());
+    if (!poems.length) return;
+
+    const prevBtn = $("#fb-prev");
+    const nextBtn = $("#fb-next");
+    const status = $("#fb-status");
+    const wide = matchMedia("(min-width: 760px)");
+    const TURN_MS = reducedMotion ? 0 : 1000;
+    const TOTAL_POEMS = 75;
+    const WORDS = { 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five" };
+    const MORE = { 70: "seventy", 71: "seventy-one", 72: "seventy-two", 73: "seventy-three", 74: "seventy-four" };
+
+    let spread = wide.matches;
+    let current = -1;          // index of the poem being read (-1 = none yet)
+    const read = new Set();    // poems already read
+    let faces = [];
+    let leaves = [];
+    let turned = 0;            // how many leaves are turned over
+    let busy = false;
+
+    const el = (tag, cls, html) => {
+      const n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (html !== undefined) n.innerHTML = html;
+      return n;
+    };
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+    /* ── pages ── */
+    function coverFace() {
+      const f = el("div", "fb-face fb-face--cover");
+      f.appendChild($("#fb-cover-tpl").content.cloneNode(true));
+      f.dataset.label = "Front cover";
+      return f;
+    }
+    function insideFace() {
+      const f = el("div", "fb-face fb-face--center", `
+        <p class="fb-meta">Before Me, Moon</p>
+        <p class="fb-note">${WORDS[poems.length] || poems.length} of the seventy-five poems are open to read here, complete.</p>
+        <p class="fb-meta">Turn the page</p>`);
+      f.dataset.label = "Inside cover";
+      return f;
+    }
+    function contentsFace() {
+      const items = poems.map((p, i) => `
+        <li><button type="button" data-poem="${i}">
+          <span class="num">${esc(p.number)}</span><span>${esc(p.title)}</span>
+          ${read.has(i) ? '<span class="tick" aria-label="read">✓</span>' : ""}
+        </button></li>`).join("");
+      const f = el("div", "fb-face fb-contents", `
+        <p class="fb-meta">Free to read</p>
+        <p class="fb-contents__title">Contents</p>
+        <ol class="fb-toc">${items}</ol>
+        <p class="fb-contents__foot">Choose a poem. The other ${MORE[TOTAL_POEMS - poems.length] || TOTAL_POEMS - poems.length} are in the book.</p>`);
+      f.dataset.label = "Contents";
+      return f;
+    }
+    function endFace() {
+      const allRead = read.size === poems.length;
+      const unread = poems.map((p, i) => i).filter((i) => !read.has(i));
+      const top = allRead && poems.length === 3
+        ? `<p class="fb-end__big">You’ve read three.<br>There are seventy-two more.</p>`
+        : "";
+      const more = unread.length
+        ? `<div class="fb-end__more"><p class="fb-meta">Read another</p>${unread
+            .map((i) => `<button type="button" data-poem="${i}">${esc(poems[i].title)}</button>`).join("")}</div>`
+        : "";
+      const f = el("div", "fb-face fb-face--center fb-end", `
+        ${top}
+        <p class="fb-end__line">Some words are only the beginning.</p>
+        <a class="btn-ink" href="https://payhip.com/buy?link=4xL3e">Discover the full collection — €9.99</a>
+        ${more}
+        <button type="button" class="fb-end__cover" data-cover>Back to the cover</button>`);
+      f.dataset.label = "End of preview";
+      return f;
+    }
+    function backFace() {
+      const f = el("div", "fb-face fb-face--back fb-face--center", `
+        <p class="fb-backline">It is about still being here when the page turns.</p>
+        <p class="fb-meta">Before Me, Moon — Mike Ramírez</p>`);
+      f.dataset.label = "Back cover";
+      return f;
+    }
+
+    /* A poem page. First page carries number + title; the rest a running title. */
+    function poemFace(p, first, text, n, total) {
+      const head = first
+        ? `<div class="fb-poemhead"><p class="fb-meta">Poem ${esc(p.number)}</p><h3 class="fb-title">${esc(p.title)}</h3><p class="fb-meta fb-by">Mike Ramírez</p></div>`
+        : `<p class="fb-running">${esc(p.title)}</p>`;
+      const f = el("div", "fb-face fb-face--poem", `${head}<pre class="fb-verse"></pre>
+        <div class="fb-foot"><span>BEFORE ME, MOON</span><span class="fb-count">${n} / ${total}</span></div>`);
+      $(".fb-verse", f).textContent = text;
+      f.dataset.label = `${p.title}, page ${n} of ${total}`;
+      return f;
+    }
+
+    /* Lay a poem out over as many pages as needed. Breaks at stanzas when possible,
+       never changes the text itself — only where a page ends. */
+    function paginate(p) {
+      const width = spread ? book.clientWidth / 2 : book.clientWidth;
+      const measure = el("div", "fb-measure");
+      book.appendChild(measure);
+      const fits = (first, text) => {
+        measure.innerHTML = "";
+        const f = poemFace(p, first, text, 1, 1);
+        f.style.width = `${width}px`;
+        measure.appendChild(f);
+        const v = $(".fb-verse", f);
+        return v.scrollHeight <= v.clientHeight + 1;
+      };
+
+      const lines = p.text.split("\n");
+      const stanzas = [];
+      let cur = [];
+      lines.forEach((l) => {
+        if (l.trim() === "") { if (cur.length) { stanzas.push(cur); cur = []; } stanzas.push(null); }
+        else cur.push(l);
+      });
+      if (cur.length) stanzas.push(cur);
+
+      const pages = [];
+      let page = [];
+      const flush = () => {
+        while (page.length && page[page.length - 1] === "") page.pop();
+        if (page.length) pages.push(page.join("\n"));
+        page = [];
+      };
+      const tryAdd = (chunk) => fits(pages.length === 0, [...page, ...chunk].join("\n"));
+
+      stanzas.forEach((st) => {
+        if (st === null) { if (page.length) page.push(""); return; }
+        if (tryAdd(st)) { page.push(...st); return; }
+        if (page.some((l) => l !== "")) flush();         // stanza starts on a new page
+        st.forEach((line) => {                             // still too long: break inside it
+          if (!tryAdd([line]) && page.length) flush();
+          page.push(line);
+        });
+      });
+      flush();
+      measure.remove();
+      return pages.length ? pages : [p.text];
+    }
+
+    /* ── binding the pages into leaves ── */
+    function rebuild(keepTurned) {
+      faces = [coverFace(), insideFace(), contentsFace()];
+      if (current >= 0) {
+        const p = poems[current];
+        const parts = paginate(p);
+        parts.forEach((t, i) => faces.push(poemFace(p, i === 0, t, i + 1, parts.length)));
+        faces.push(endFace());
+        // in a spread the back cover must be the back of the last leaf (left side)
+        if (spread && faces.length % 2 === 0) faces.push(el("div", "fb-face fb-face--blank"));
+        faces.push(backFace());
+      }
+      leaves.forEach((l) => l.remove());
+      leaves = [];
+      const per = spread ? 2 : 1;
+      for (let i = 0; i < faces.length; i += per) {
+        const leaf = el("div", "fb-leaf");
+        faces[i].classList.add("fb-side--front");
+        leaf.appendChild(faces[i]);
+        if (spread && faces[i + 1]) {
+          faces[i + 1].classList.add("fb-side--back");
+          leaf.appendChild(faces[i + 1]);
+        }
+        book.appendChild(leaf);
+        leaves.push(leaf);
+      }
+      fb.classList.toggle("fb--single", !spread);
+      turned = Math.min(keepTurned, maxTurn());
+      render();
+    }
+
+    // furthest view: the one that shows the last page
+    const maxTurn = () => (spread ? Math.ceil((faces.length - 1) / 2) : faces.length - 1);
+    // the view that shows a given page
+    const viewOf = (faceIndex) => (spread ? Math.ceil(faceIndex / 2) : faceIndex);
+
+    function visibleFaces() {
+      if (!spread) return [faces[turned]];
+      return [faces[turned * 2 - 1], faces[turned * 2]].filter(Boolean);
+    }
+
+    function render() {
+      const n = leaves.length;
+      leaves.forEach((leaf, i) => {
+        const flipped = i < turned;
+        leaf.classList.toggle("is-flipped", flipped);
+        leaf.style.zIndex = String(flipped ? i + 1 : 2 * n - i);
+      });
+      book.classList.toggle("is-front", spread && turned === 0);
+      book.classList.toggle("is-back", spread && turned * 2 >= faces.length);
+
+      const shown = visibleFaces();
+      faces.forEach((f) => {
+        const on = shown.includes(f);
+        f.setAttribute("aria-hidden", on ? "false" : "true");
+        f.inert = !on;
+      });
+      prevBtn.disabled = turned === 0;
+      nextBtn.disabled = turned >= maxTurn();
+      status.textContent = shown.map((f) => f.dataset.label).join("  ·  ");
+    }
+
+    function go(dir) {
+      const target = turned + dir;
+      if (busy || target < 0 || target > maxTurn()) return;
+      busy = true;
+      const leaf = leaves[dir > 0 ? turned : turned - 1];
+      leaf.classList.add("is-turning");
+      leaf.style.zIndex = String(leaves.length * 3);
+      leaf.classList.toggle("is-flipped", dir > 0);
+      turned = target;
+      prevBtn.disabled = turned === 0;
+      nextBtn.disabled = turned >= maxTurn();
+      setTimeout(() => {
+        leaf.classList.remove("is-turning");
+        render();
+        busy = false;
+      }, TURN_MS);
+    }
+
+    // jump without turning every page in between (short fade)
+    function jumpTo(view, then) {
+      busy = true;
+      book.classList.add("is-jumping");
+      setTimeout(() => {
+        turned = view;
+        render();
+        book.classList.remove("is-jumping");
+        busy = false;
+        if (then) then();
+      }, reducedMotion ? 0 : 350);
+    }
+
+    function openPoem(i) {
+      if (busy) return;
+      const contentsView = viewOf(2);
+      const start = () => {
+        go(1);
+        setTimeout(() => { const first = faces[3]; if (first) { first.tabIndex = -1; first.focus({ preventScroll: true }); } }, TURN_MS + 20);
+      };
+      const load = () => { current = i; read.add(i); rebuild(contentsView); };
+
+      if (turned === contentsView) { load(); start(); return; }
+      // from the end page: fade back to the contents, then open the new poem
+      busy = true;
+      book.classList.add("is-jumping");
+      setTimeout(() => {
+        load();
+        book.classList.remove("is-jumping");
+        busy = false;
+        start();
+      }, reducedMotion ? 0 : 350);
+    }
+
+    /* ── controls ── */
+    prevBtn.addEventListener("click", () => go(-1));
+    nextBtn.addEventListener("click", () => go(1));
+
+    book.addEventListener("click", (e) => {
+      const poemBtn = e.target.closest("[data-poem]");
+      if (poemBtn) { openPoem(Number(poemBtn.dataset.poem)); return; }
+      if (e.target.closest("[data-cover]")) { jumpTo(0); return; }
+      if (e.target.closest("a, button")) return;
+      // click the right half to turn forward, the left half to go back
+      const r = book.getBoundingClientRect();
+      const forward = e.clientX > r.left + r.width / 2;
+      if (forward && turned === viewOf(2) && current < 0) return; // choose a poem first
+      go(forward ? 1 : -1);
+    });
+
+    // swipe on touch screens
+    let sx = null, sy = null;
+    book.addEventListener("pointerdown", (e) => { sx = e.clientX; sy = e.clientY; });
+    book.addEventListener("pointerup", (e) => {
+      if (sx === null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { book.dataset.swiped = "1"; go(dx < 0 ? 1 : -1); }
+    });
+    book.addEventListener("click", (e) => {
+      if (book.dataset.swiped) { e.stopImmediatePropagation(); delete book.dataset.swiped; }
+    }, true);
+
+    $("#open-book").addEventListener("keydown", (e) => {
+      if (e.target.matches("input, textarea")) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+    });
+
+    // re-lay out when the screen changes size (keeps the reader roughly in place)
+    let lastWidth = 0;
+    const relayout = () => {
+      const w = book.clientWidth;
+      const nowSpread = wide.matches;
+      if (Math.abs(w - lastWidth) < 8 && nowSpread === spread) return;
+      lastWidth = w;
+      const firstShown = spread ? Math.max(0, turned * 2 - 1) : turned;
+      spread = nowSpread;
+      rebuild(viewOf(firstShown));
+    };
+    let rt;
+    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(relayout, 200); });
+
+    $("#fb-controls").hidden = false;
+    const start = () => { lastWidth = book.clientWidth; rebuild(0); };
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(start);
+  }
+
+  function initLoop() {
+    const back = $(".final__back");
+    if (!back) return;
+    back.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+      // move focus to the start without jumping the scroll
+      setTimeout(() => $(".nav__logo").focus({ preventScroll: true }), reducedMotion ? 0 : 900);
+    });
+  }
+
+  initNav();
+  initScroll();
+  initMoon();
+  initReveal();
+  initPages();
+  initWaitlist();
+  initFlipbook();
+  initLoop();
+})();
+  </script>
+</body>
+</html>
